@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<member>
+  <set>
+  <general>
+    <author name="MSC-DMS-PG-WXO-YESTERDAY" version="1.6" />
+    <dataset name="msc/observation/atmospheric/surface_weather/wxo-2.0-ascii" />
+    <phase name="product-yesterday_en-xml-2.0" />
+    <!--><id xlink:href="/data/msc/observation/atmospheric/surface_weather/wxo-2.0-ascii/product-yesterday_en-xml-2.0/201112121435/nb" />
+    <parent xlink:href="/data/" />-->
+  </general>
+  <identification-elements>
+    <element name="station_name" uom="unitless" value="Bas Caraquet" />
+    <element name="latitude" uom="degree" value="47.8" />
+    <element name="longitude" uom="degree" value="-64.83" />
+    <element name="transport_canada_id" uom="unitless" value="WXS" />
+    <element name="observation_date_utc" uom="unitless" value="2011-12-12T06:00:00.000Z" />
+    <element name="observation_date_local_time" uom="unitless" value="2011-12-12T02:00:00.000 AST" />
+    <element name="climate_station_number" uom="unitless" value="8100467" />
+    <element name="wmo_station_number" uom="unitless" value="71598" />
+  </identification-elements>
+ </set>
+<set>
+  <general>
+    <author name="MSC-DMS-PG-WXO-YESTERDAY" version="1.6" />
+    <dataset name="msc/observation/atmospheric/surface_weather/wxo-2.0-ascii" />
+    <phase name="product-yesterday_en-xml-2.0" />
+    <!--><id xlink:href="/data/msc/observation/atmospheric/surface_weather/wxo-2.0-ascii/product-yesterday_en-xml-2.0/201112121435/nb" />
+    <parent xlink:href="/data/" />-->
+  </general>
+  <identification-elements>
+    <element name="station_name" uom="unitless" value="Ryan's House" />
+    <element name="latitude" uom="degree" value="47.8" />
+    <element name="longitude" uom="degree" value="-64.83" />
+    <element name="transport_canada_id" uom="unitless" value="WXS" />
+    <element name="observation_date_utc" uom="unitless" value="2011-12-12T06:00:00.000Z" />
+    <element name="observation_date_local_time" uom="unitless" value="2011-12-12T02:00:00.000 AST" />
+    <element name="climate_station_number" uom="unitless" value="8100467" />
+    <element name="wmo_station_number" uom="unitless" value="71598" />
+  </identification-elements>
+</set>
+</member>

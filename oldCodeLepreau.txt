@@ -1,0 +1,66 @@
+////if no val, display so
+            ////if val, check to see if val is greater than threshold for 24 hrs
+            ////send email if exceeds.
+
+            //if (pointLepreau_val == "&nbsp;")
+            //{
+            //    //stat_Bas_val = "0";
+            //    txtXMLInfo.Text += " 24 hrs = " + noVal;
+            //}
+            //else
+            //{
+            //    double my24hr;
+            //    pointLepreau_val = gviewPrecip.Rows[16].Cells[0].Text;
+            //    my24hr = Convert.ToDouble(pointLepreau_val);
+            //    txtXMLInfo.Text += " 24hrs = " + my24hr;
+
+            //    if (my24hr >= 25)
+            //    {
+            //        //send email
+            //        //POCOLOGAN HARBOUR
+            //        Response.Write("PLEASE SEND EMAIL - 24 HR PRECIP EXCEEDS FOR POCOLOGAN HARBOUR");
+            //    }
+            //    if (my24hr >= 18.5)
+            //    {
+            //        //send email
+            //        //LETANG HARBOUR
+            //        Response.Write("PLEASE SEND EMAIL - 24 HR PRECIP EXCEEDS FOR LETANG HARBOUR");
+            //    }
+
+            //}
+            ////if no val, display so
+            ////if val, check to see if val is greater than threshold for 48 hrs
+            ////send email if exceeds.
+            //if (pointLepreau_val_prev == "&nbsp;")
+            //{
+            //    //stat_Bas_val_prev = "0";
+            //    txtXMLInfo.Text += "    48 hrs = " + noVal + ", " + noCal;
+            //}
+            //else
+            //{
+            //    double my48hr;
+            //    pointLepreau_val_prev = gviewPrecPrev.Rows[16].Cells[0].Text;
+            //    if (pointLepreau_val == "&nbsp;")
+            //    {
+            //        txtXMLInfo.Text += "    48 hrs = " + noCal;
+            //    }
+            //    else
+            //    {
+            //        my48hr = Convert.ToDouble(pointLepreau_val) + Convert.ToDouble(pointLepreau_val_prev);
+            //        txtXMLInfo.Text += "   48hrs = " + my48hr;
+
+            //        if (my48hr >= 37.5)
+            //        {
+            //            //send email
+            //            //POCOLOGAN HARBOUR
+            //            Response.Write("PLEASE SEND EMAIL - 48 HR PRECIP EXCEEDS FOR POCOLOGAN HARBOUR");
+            //        }
+            //        if (my48hr >= 37)
+            //        {
+            //            //send email
+            //            //LETANG HARBOUR
+            //            Response.Write("PLEASE SEND EMAIL - 48 HR PRECIP EXCEEDS FOR LETANG HARBOUR");
+            //        }
+            //    }
+
+            //}
