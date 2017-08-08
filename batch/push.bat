@@ -1,6 +1,6 @@
 @echo off
 :Loop
-ping -n 1 dd.weatheroffice.ec.gc.ca && ping -n 1 atlantic-exgate.atlantic.int.ec.gc.ca && ping -n 1 wmon01dtchlebl2
+ping -n 1 dd.weatheroffice.ec.gc.ca && ping -n 1 smtp.ncr.int.ec.gc.ca && ping -n 1 wmon01dtchlebl2
 if not %errorlevel% equ 0 (Timeout /T 300 /nobreak 
 goto Loop)
  
