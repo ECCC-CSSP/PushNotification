@@ -225,7 +225,7 @@ namespace PushNotification
 
                         SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-                        myClient.Host = "atlantic-exgate.Atlantic.int.ec.gc.ca";
+                        myClient.Host = "smtp.ncr.int.ec.gc.ca";
 
                         //    subject = "TEST -- RAINFALL CRITERION EXCEEDED - " + CMPArea + " CMP";
                         //    msg = "Please be advised that <b>" + rainAmount + "</b> mm of rainfall has been recorded at <b>" + precipStation + "</b> in the past <b>" + timeFrame + "</b> hours. " +
@@ -497,7 +497,7 @@ namespace PushNotification
 
             //    SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-            //    myClient.Host = "atlantic-exgate.Atlantic.int.ec.gc.ca";
+            //    myClient.Host = "smtp.ncr.int.ec.gc.ca";
 
             //    //    subject = "TEST -- RAINFALL CRITERION EXCEEDED - " + CMPArea + " CMP";
             //    //    msg = "Please be advised that <b>" + rainAmount + "</b> mm of rainfall has been recorded at <b>" + precipStation + "</b> in the past <b>" + timeFrame + "</b> hours. " +

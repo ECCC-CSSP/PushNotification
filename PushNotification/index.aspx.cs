@@ -30,7 +30,7 @@ namespace PushNotification
             SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
             //myClient.Host = "ssctest.itsso.gc.ca";
-            myClient.Host = "atlantic-exgate.Atlantic.int.ec.gc.ca";
+            myClient.Host = "smtp.ncr.int.ec.gc.ca";
 
             string subject = "Testing Push Notification Email";
 
@@ -66,7 +66,7 @@ namespace PushNotification
 
             SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-            myClient.Host = "atlantic-exgate.Atlantic.int.ec.gc.ca";
+            myClient.Host = "smtp.ncr.int.ec.gc.ca";
 
             //    subject = "TEST -- RAINFALL CRITERION EXCEEDED - " + CMPArea + " CMP";
             //    msg = "Please be advised that <b>" + rainAmount + "</b> mm of rainfall has been recorded at <b>" + precipStation + "</b> in the past <b>" + timeFrame + "</b> hours. " +
@@ -118,7 +118,7 @@ namespace PushNotification
 
             SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-            myClient.Host = "atlantic-exgate.Atlantic.int.ec.gc.ca";
+            myClient.Host = "smtp.ncr.int.ec.gc.ca";
 
             //    subject = "TEST -- RAINFALL CRITERION EXCEEDED - " + CMPArea + " CMP";
             //    msg = "Please be advised that <b>" + rainAmount + "</b> mm of rainfall has been recorded at <b>" + precipStation + "</b> in the past <b>" + timeFrame + "</b> hours. " +
@@ -550,7 +550,7 @@ namespace PushNotification
 
                     SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-                    myClient.Host = "atlantic-exgate.Atlantic.int.ec.gc.ca";
+                    myClient.Host = "smtp.ncr.int.ec.gc.ca";
 
                     subject = "Caraquet/Miscou has one or more 'no values'. ";
                     msg = "Both stations (Caraquet/Miscou) has one or more 'no values'.  Please manually check station.";
@@ -778,7 +778,7 @@ namespace PushNotification
 
                     SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-                    myClient.Host = "atlantic-exgate.Atlantic.int.ec.gc.ca";
+                    myClient.Host = "smtp.ncr.int.ec.gc.ca";
 
                     subject = "Miramichi/Caraquet has one or more 'no values'. ";
                     msg = "Both stations (Miramichi/Caraquet) has one or more 'no values'.  Please manually check station.";
@@ -1023,7 +1023,7 @@ namespace PushNotification
 
                     SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-                    myClient.Host = "atlantic-exgate.Atlantic.int.ec.gc.ca";
+                    myClient.Host = "smtp.ncr.int.ec.gc.ca";
 
                     subject = "Point Lepreau/St. Stephen has one or more 'no values'. ";
                     msg = "Both stations (Point Lepreau/St. Stephen) has one or more 'no values'.  Please manually check station.";
@@ -1342,7 +1342,7 @@ namespace PushNotification
 
                     SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-                    myClient.Host = "atlantic-exgate.Atlantic.int.ec.gc.ca";
+                    myClient.Host = "smtp.ncr.int.ec.gc.ca";
 
                     subject = "St. Stephen/Point Lepreau has one or more 'no values'. ";
                     msg = "Both stations (St. Stephen/Point Lepreau) has one or more 'no values'.  Please manually check station.";

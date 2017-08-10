@@ -44,7 +44,7 @@ namespace PushNotification
 
             SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-            myClient.Host = "atlantic-exgate.Atlantic.int.ec.gc.ca";
+            myClient.Host = "smtp.ncr.int.ec.gc.ca";
 
             //string msg =  "This is a test";
 
@@ -72,7 +72,7 @@ namespace PushNotification
 
             //mail.Body = "This is send from one of me web pages using the Atlantic Exgate Server!!!!";
 
-           // SmtpClient myClient = new SmtpClient("atlantic-exgate.Atlantic.int.ec.gc.ca");
+           // SmtpClient myClient = new SmtpClient("smtp.ncr.int.ec.gc.ca");
             var rainAmount = "55";
             var precipStation = "Point Lepreau";
             var timeFrame = "48";
