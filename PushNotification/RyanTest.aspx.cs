@@ -44,7 +44,13 @@ namespace PushNotification
 
             SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-            myClient.Host = "smtp.ncr.int.ec.gc.ca";
+            //myClient.Host = "smtp.ctst.email-courriel.canada.ca";
+            myClient.Host = "smtp.email-courriel.canada.ca";
+            myClient.Port = 587;
+            //myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
+            //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
+            myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+            myClient.EnableSsl = true;
 
             //string msg =  "This is a test";
 
@@ -61,8 +67,15 @@ namespace PushNotification
 
             //Automatically uses the default credentials from the app.config     
             //MailMessage mail = new MailMessage();
-            //SmtpClient smtpServ = new SmtpClient("131.235.8.144");
+            //SmtpClient myClient = new SmtpClient("131.235.8.144");
 
+            ////myClient.Host = "smtp.ctst.email-courriel.canada.ca";
+            //myClient.Host = "smtp.email-courriel.canada.ca";
+            //myClient.Port = 587;
+            ////myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
+            ////myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
+            //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+            //myClient.EnableSsl = true;
 
             //mail.From = new MailAddress("Ryan.Alexander@canada.ca");
 
@@ -72,7 +85,7 @@ namespace PushNotification
 
             //mail.Body = "This is send from one of me web pages using the Atlantic Exgate Server!!!!";
 
-           // SmtpClient myClient = new SmtpClient("smtp.ncr.int.ec.gc.ca");
+            // SmtpClient myClient = new SmtpClient("smtp.ncr.int.ec.gc.ca");
             var rainAmount = "55";
             var precipStation = "Point Lepreau";
             var timeFrame = "48";

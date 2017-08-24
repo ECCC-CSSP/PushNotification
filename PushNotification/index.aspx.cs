@@ -29,8 +29,13 @@ namespace PushNotification
 
             SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-            //myClient.Host = "ssctest.itsso.gc.ca";
-            myClient.Host = "smtp.ncr.int.ec.gc.ca";
+            //myClient.Host = "smtp.ctst.email-courriel.canada.ca";
+            myClient.Host = "smtp.email-courriel.canada.ca";
+            myClient.Port = 587;
+            //myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
+            //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
+            myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+            myClient.EnableSsl = true;
 
             string subject = "Testing Push Notification Email";
 
@@ -66,7 +71,13 @@ namespace PushNotification
 
             SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-            myClient.Host = "smtp.ncr.int.ec.gc.ca";
+            //myClient.Host = "smtp.ctst.email-courriel.canada.ca";
+            myClient.Host = "smtp.email-courriel.canada.ca";
+            myClient.Port = 587;
+            //myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
+            //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
+            myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+            myClient.EnableSsl = true;
 
             //    subject = "TEST -- RAINFALL CRITERION EXCEEDED - " + CMPArea + " CMP";
             //    msg = "Please be advised that <b>" + rainAmount + "</b> mm of rainfall has been recorded at <b>" + precipStation + "</b> in the past <b>" + timeFrame + "</b> hours. " +
@@ -118,7 +129,13 @@ namespace PushNotification
 
             SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-            myClient.Host = "smtp.ncr.int.ec.gc.ca";
+            //myClient.Host = "smtp.ctst.email-courriel.canada.ca";
+            myClient.Host = "smtp.email-courriel.canada.ca";
+            myClient.Port = 587;
+            //myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
+            //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
+            myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+            myClient.EnableSsl = true;
 
             //    subject = "TEST -- RAINFALL CRITERION EXCEEDED - " + CMPArea + " CMP";
             //    msg = "Please be advised that <b>" + rainAmount + "</b> mm of rainfall has been recorded at <b>" + precipStation + "</b> in the past <b>" + timeFrame + "</b> hours. " +
@@ -550,7 +567,13 @@ namespace PushNotification
 
                     SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-                    myClient.Host = "smtp.ncr.int.ec.gc.ca";
+                    //myClient.Host = "smtp.ctst.email-courriel.canada.ca";
+                    myClient.Host = "smtp.email-courriel.canada.ca";
+                    myClient.Port = 587;
+                    //myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
+                    //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
+                    myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+                    myClient.EnableSsl = true;
 
                     subject = "Caraquet/Miscou has one or more 'no values'. ";
                     msg = "Both stations (Caraquet/Miscou) has one or more 'no values'.  Please manually check station.";
@@ -778,7 +801,13 @@ namespace PushNotification
 
                     SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-                    myClient.Host = "smtp.ncr.int.ec.gc.ca";
+                    //myClient.Host = "smtp.ctst.email-courriel.canada.ca";
+                    myClient.Host = "smtp.email-courriel.canada.ca";
+                    myClient.Port = 587;
+                    //myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
+                    //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
+                    myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+                    myClient.EnableSsl = true;
 
                     subject = "Miramichi/Caraquet has one or more 'no values'. ";
                     msg = "Both stations (Miramichi/Caraquet) has one or more 'no values'.  Please manually check station.";
@@ -1023,7 +1052,13 @@ namespace PushNotification
 
                     SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-                    myClient.Host = "smtp.ncr.int.ec.gc.ca";
+                    //myClient.Host = "smtp.ctst.email-courriel.canada.ca";
+                    myClient.Host = "smtp.email-courriel.canada.ca";
+                    myClient.Port = 587;
+                    //myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
+                    //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
+                    myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+                    myClient.EnableSsl = true;
 
                     subject = "Point Lepreau/St. Stephen has one or more 'no values'. ";
                     msg = "Both stations (Point Lepreau/St. Stephen) has one or more 'no values'.  Please manually check station.";
@@ -1342,7 +1377,13 @@ namespace PushNotification
 
                     SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-                    myClient.Host = "smtp.ncr.int.ec.gc.ca";
+                    //myClient.Host = "smtp.ctst.email-courriel.canada.ca";
+                    myClient.Host = "smtp.email-courriel.canada.ca";
+                    myClient.Port = 587;
+                    //myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
+                    //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
+                    myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+                    myClient.EnableSsl = true;
 
                     subject = "St. Stephen/Point Lepreau has one or more 'no values'. ";
                     msg = "Both stations (St. Stephen/Point Lepreau) has one or more 'no values'.  Please manually check station.";

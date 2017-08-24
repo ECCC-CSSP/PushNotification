@@ -225,7 +225,13 @@ namespace PushNotification
 
                         SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-                        myClient.Host = "smtp.ncr.int.ec.gc.ca";
+                        //myClient.Host = "smtp.ctst.email-courriel.canada.ca";
+                        myClient.Host = "smtp.email-courriel.canada.ca";
+                        myClient.Port = 587;
+                        //myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
+                        //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
+                        myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+                        myClient.EnableSsl = true;
 
                         //    subject = "TEST -- RAINFALL CRITERION EXCEEDED - " + CMPArea + " CMP";
                         //    msg = "Please be advised that <b>" + rainAmount + "</b> mm of rainfall has been recorded at <b>" + precipStation + "</b> in the past <b>" + timeFrame + "</b> hours. " +
@@ -248,7 +254,7 @@ namespace PushNotification
                 }
                 i++;
             }
-            
+
 
 
             ////hold vals for stations
@@ -468,10 +474,10 @@ namespace PushNotification
             //var west_head24 = Convert.ToDouble(west_head);
             //var yarm_air24 = Convert.ToDouble(yarm_air);
 
-            
-           
 
-           
+
+
+
 
             ////check values against threshold
             //var val = 74.9;
@@ -497,7 +503,13 @@ namespace PushNotification
 
             //    SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-            //    myClient.Host = "smtp.ncr.int.ec.gc.ca";
+            ////myClient.Host = "smtp.ctst.email-courriel.canada.ca";
+            //myClient.Host = "smtp.email-courriel.canada.ca";
+            //myClient.Port = 587;
+            ////myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
+            ////myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
+            //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+            //myClient.EnableSsl = true;
 
             //    //    subject = "TEST -- RAINFALL CRITERION EXCEEDED - " + CMPArea + " CMP";
             //    //    msg = "Please be advised that <b>" + rainAmount + "</b> mm of rainfall has been recorded at <b>" + precipStation + "</b> in the past <b>" + timeFrame + "</b> hours. " +
