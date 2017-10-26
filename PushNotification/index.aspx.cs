@@ -58,7 +58,7 @@ namespace PushNotification
 
             //mail.To.Add("NB_CSSP_Coordination_PCCSM@inspection.gc.ca,Florence.Albert@dfo-mpo.gc.ca,Arthur.LeBlanc@dfo-mpo.gc.ca,catherine.cyr@dfo-mpo.gc.ca,Joanne.Leger@dfo-mpo.gc.ca,edmond.martin@dfo-mpo.gc.ca,Rachel.Friolet@dfo-mpo.gc.ca,kim.theriault@dfo-mpo.gc.ca,bernard.richard@canada.ca,patrice.godin@canada.ca,david.benoit@canada.ca,ec.sqematlantique-mwqmatlantic.ec@canada.ca,Lisa.M.Robichaud@dfo-mpo.gc.ca,ryan.alexander@canada.ca,lab@ecwinc.org,charles.leblanc2@canada.ca");
             //mail.To.Add("ec.sqematlantique-mwqmatlantic.ec@canada.ca,Closure-Fermeture@dfo-mpo.gc.ca,NB_CSSP_Coordination_PCCSM@inspection.gc.ca,Arthur.LeBlanc@dfo-mpo.gc.ca,Joanne.Leger@dfo-mpo.gc.ca,stephen.lanteigne@dfo-mpo.gc.ca,florence.albert@dfo-mpo.gc.ca,kim.theriault@dfo-mpo.gc.ca,Rachel.Friolet@dfo-mpo.gc.ca,bernard.richard@canada.ca,patrice.godin@canada.ca,timothy.leblanc@gnb.ca,sylvie.morton@gnb.ca,Susan.Tao@gnb.ca,Denis.Chenard@gnb.ca,Brad.McPherson@gnb.ca,Maryline.Mallet@gnb.ca,helene.lacroix@gnb.ca,bernice.losier@inspection.gc.ca,nicole.tilley@inspection.gc.ca,grace.mellano@dfo-mpo.gc.ca,christopher.roberts@canada.ca,charles.leblanc2@canada.ca,paul.klaamas@canada.ca,jeffrey.stobo@canada.ca,robert.gaudet2@canada.ca,don.walter@canada.ca,joe.pomeroy@canada.ca,roy.leon-morales@canada.ca");
-            mail.To.Add("CSSPClosure@dfo-mpo.gc.ca,NB_CSSP_Coordination_PCCSM@inspection.gc.ca,bernice.losier@inspection.gc.ca,gilles.obrien@inspection.gc.ca,grace.mellano@dfo-mpo.gc.ca,eric.chiasson@dfo-mpo.gc.ca,john.cormier@dfo-mpo.gc.ca,christopher.roberts@canada.ca,paul.klaamas@canada.ca,jeffrey.stobo@canada.ca,charles.leblanc2@canada.ca,robert.gaudet2@canada.ca,don.walter@canada.ca,joe.pomeroy@canada.ca,ec.sqematlantique-mwqmatlantic.ec@canada.ca,florence.pelet@canada.ca,susan.roe@canada.ca,joanne.leger@dfo-mpo.gc.ca,heidi.corrigan@inspection.gc.ca,jan.tarr@inspection.gc.ca,albert.comeau@inspection.gc.ca,karine.arsenault@inspection.gc.ca,stephen.lanteigne@dfo-mpo.gc.ca,florence.albert@dfo-mpo.gc.ca,gabriel.albert@dfo-mpo.gc.ca,rachel.friolet@dfo-mpo.gc.ca,jacques.hache@dfo-mpo.gc.ca,bernard.richard@canada.ca,patrice.godin@canada.ca,celine.godin@gnb.ca");
+            mail.To.Add("CSSPClosure@dfo-mpo.gc.ca,NB_CSSP_Coordination_PCCSM@inspection.gc.ca,bernice.losier@inspection.gc.ca,gilles.obrien@inspection.gc.ca,grace.mellano@dfo-mpo.gc.ca,eric.chiasson@dfo-mpo.gc.ca,john.cormier@dfo-mpo.gc.ca,christopher.roberts@canada.ca,paul.klaamas@canada.ca,jeffrey.stobo@canada.ca,charles.leblanc2@canada.ca,robert.gaudet2@canada.ca,don.walter@canada.ca,joe.pomeroy@canada.ca,ec.sqematlantique-mwqmatlantic.ec@canada.ca,florence.pelet@canada.ca,joanne.leger@dfo-mpo.gc.ca,heidi.corrigan@inspection.gc.ca,jan.tarr@inspection.gc.ca,albert.comeau@inspection.gc.ca,karine.arsenault@inspection.gc.ca,stephen.lanteigne@dfo-mpo.gc.ca,florence.albert@dfo-mpo.gc.ca,gabriel.albert@dfo-mpo.gc.ca,rachel.friolet@dfo-mpo.gc.ca,jacques.hache@dfo-mpo.gc.ca,bernard.richard@canada.ca,patrice.godin@canada.ca,celine.godin@gnb.ca");
 
             //mail.To.Add(caraList);
             //mail.To.Add(let_Dig_Bo_Oak_List);
@@ -113,9 +113,7 @@ namespace PushNotification
 
             MailMessage mail = new System.Net.Mail.MailMessage();
 
-            //mail.To.Add("NB_CSSP_Coordination_PCCSM@inspection.gc.ca,Regulations.Xmar@dfo-mpo.gc.ca,Margaret.Lever@dfo-mpo.gc.ca,maureen.butler@dfo-mpo.gc.ca,jeff.dionne@dfo-mpo.gc.ca,cindy.morrissey@dfo-mpo.gc.ca,bernard.richard@canada.ca,patrice.godin@canada.ca,david.benoit@canada.ca,ec.sqematlantique-mwqmatlantic.ec@canada.ca,dkillorn@ecwinc.org,lab@ecwinc.org,charlotteclamharvesterscoop@gmail.com,donne@nbnet.nb.ca,ryan.alexander@canada.ca,charles.leblanc2@canada.ca");
-            //mail.To.Add("ec.sqematlantique-mwqmatlantic.ec@canada.ca,Regulations.Xmar@dfo-mpo.gc.ca,NB_CSSP_Coordination_PCCSM@inspection.gc.ca,joe.walcott@dfo-mpo.gc.ca,Jennifer.Hiltz@dfo-mpo.gc.ca,tammy.rose-quinn@dfo-mpo.gc.ca,craig.reynolds@dfo-mpo.gc.ca,jeff.cline@dfo-mpo.gc.ca,maureen.butler@dfo-mpo.gc.ca,Margaret.Lever@dfo-mpo.gc.ca,jeff.dionne@dfo-mpo.gc.ca,cindy.morrissey@dfo-mpo.gc.ca,bernard.richard@canada.ca,patrice.godin@canada.ca,timothy.leblanc@gnb.ca,denis.chenard@gnb.ca,brad.mcpherson@gnb.ca,Susan.Tao@gnb.ca,helene.lacroix@gnb.ca,dkillorn@ecwinc.org,lab@ecwinc.org,charlotteclamharvesterscoop@gmail.com,donne@nbnet.nb.ca,bernice.losier@inspection.gc.ca,nicole.tilley@inspection.gc.ca,grace.mellano@dfo-mpo.gc.ca,christopher.roberts@canada.ca,charles.leblanc2@canada.ca,paul.klaamas@canada.ca,jeffrey.stobo@canada.ca,robert.gaudet2@canada.ca,don.walter@canada.ca,joe.pomeroy@canada.ca,roy.leon-morales@canada.ca");
-            mail.To.Add("Regulations.XMAR@dfo-mpo.gc.ca,joe.walcott@dfo-mpo.gc.ca,NB_CSSP_Coordination_PCCSM@inspection.gc.ca,Jeff.Dionne@dfo-mpo.gc.ca,bernice.losier@inspection.gc.ca,gilles.obrien@inspection.gc.ca,grace.mellano@dfo-mpo.gc.ca,eric.chiasson@dfo-mpo.gc.ca,john.cormier@dfo-mpo.gc.ca,christopher.roberts@canada.ca,paul.klaamas@canada.ca,jeffrey.stobo@canada.ca,charles.leblanc2@canada.ca,robert.gaudet2@canada.ca,don.walter@canada.ca,joe.pomeroy@canada.ca,ec.sqematlantique-mwqmatlantic.ec@canada.ca,florence.pelet@canada.ca,susan.roe@canada.ca,jan.tarr@inspection.gc.ca,heidi.corrigan@inspection.gc.ca,scott.mossman@dfo-mpo.gc.ca,tammy.rose-quinn@dfo-mpo.gc.ca,edward.parker@dfo-mpo.gc.ca,craig.reynolds@dfo-mpo.gc.ca,jeff.cline@dfo-mpo.gc.ca,maureen.butler@dfo-mpo.gc.ca,margaret.lever@dfo-mpo.gc.ca,Cindy.Morrissey@dfo-mpo.gc.ca,Susan.Greenlaw@dfo-mpo.gc.ca,bernard.richard@canada.ca,patrice.godin@canada.ca,celine.godin@gnb.ca");
+            mail.To.Add("Regulations.XMAR@dfo-mpo.gc.ca,joe.walcott@dfo-mpo.gc.ca,NB_CSSP_Coordination_PCCSM@inspection.gc.ca,Jeff.Dionne@dfo-mpo.gc.ca,bernice.losier@inspection.gc.ca,gilles.obrien@inspection.gc.ca,grace.mellano@dfo-mpo.gc.ca,eric.chiasson@dfo-mpo.gc.ca,john.cormier@dfo-mpo.gc.ca,christopher.roberts@canada.ca,paul.klaamas@canada.ca,jeffrey.stobo@canada.ca,charles.leblanc2@canada.ca,robert.gaudet2@canada.ca,don.walter@canada.ca,joe.pomeroy@canada.ca,ec.sqematlantique-mwqmatlantic.ec@canada.ca,florence.pelet@canada.ca,jan.tarr@inspection.gc.ca,heidi.corrigan@inspection.gc.ca,scott.mossman@dfo-mpo.gc.ca,tammy.rose-quinn@dfo-mpo.gc.ca,edward.parker@dfo-mpo.gc.ca,craig.reynolds@dfo-mpo.gc.ca,jeff.cline@dfo-mpo.gc.ca,maureen.butler@dfo-mpo.gc.ca,Cindy.Morrissey@dfo-mpo.gc.ca,Susan.Greenlaw@dfo-mpo.gc.ca,bernard.richard@canada.ca,patrice.godin@canada.ca,celine.godin@gnb.ca");
             //mail.To.Add(caraList);
             //mail.To.Add(let_Dig_Bo_Oak_List);
 
@@ -184,43 +182,43 @@ namespace PushNotification
             //set the time frame for each area
             //caraquet
             //Sep 20 - Nov 15
-            DateTime basStart = new DateTime(2016, 09, 20);
-            DateTime basEnd = new DateTime(2016, 11, 15);
+            DateTime basStart = new DateTime(2017, 09, 20);
+            DateTime basEnd = new DateTime(2017, 11, 15);
 
             //tabusintac Bay
             //Sep 20 - Nov 16
-            DateTime tabStart = new DateTime(2016, 09, 20);
-            DateTime tabEnd = new DateTime(2016, 11, 16);
+            DateTime tabStart = new DateTime(2017, 09, 20);
+            DateTime tabEnd = new DateTime(2017, 11, 16);
 
             //pocologan harbour
             //Nov 1 - Mar 31
             //need to take care of the date when the years change.
-            DateTime pocoStart = new DateTime(2016, 11, 01);
-            DateTime pocoEnd = new DateTime(2017, 03, 31);
+            DateTime pocoStart = new DateTime(2017, 11, 01);
+            DateTime pocoEnd = new DateTime(2018, 03, 31);
 
             //letang harbour – Rain CMP eliminated (no rain criteria)
             //Nov 1 - Mar 31
             //need to take care of the date when the year changes.
-            //DateTime letangStart = new DateTime(2013, 11, 01);
-            //DateTime letangEnd = new DateTime(2014, 03, 31);
+            //DateTime letangStart = new DateTime(2017, 11, 01);
+            //DateTime letangEnd = new DateTime(2018, 03, 31);
 
             //digdeguash harbour
             //Oct 1 - Apr 30
             //need to take care of the date when the year changes.
-            DateTime digStart = new DateTime(2016, 10, 01);
-            DateTime digEnd = new DateTime(2017, 04, 30);
+            DateTime digStart = new DateTime(2017, 10, 01);
+            DateTime digEnd = new DateTime(2018, 04, 30);
 
             //boca river & mill cove
             //Oct 1 - Apr 30
             //need to take care of the date when the year changes.
-            DateTime bocMillStart = new DateTime(2016, 10, 01);
-            DateTime bocMillEnd = new DateTime(2017, 04, 30);
+            DateTime bocMillStart = new DateTime(2017, 10, 01);
+            DateTime bocMillEnd = new DateTime(2018, 04, 30);
 
             //oak bay & waweig river
             //Nov 1 - Mar 31
             //need to take care of the date when the year changes.
-            DateTime oakWawStart = new DateTime(2016, 11, 01);
-            DateTime oakWawEnd = new DateTime(2017, 03, 31);
+            DateTime oakWawStart = new DateTime(2017, 11, 01);
+            DateTime oakWawEnd = new DateTime(2018, 03, 31);
 
 
 
