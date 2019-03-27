@@ -21,7 +21,7 @@ namespace PushNotification
             MailMessage mail = new System.Net.Mail.MailMessage();
 
             //mail.To.Add("Test1.User@ssctest.itsso.gc.ca");
-            mail.To.Add("charles.leblanc2@canada.ca,Greg.Perchard@canada.ca,Ryan.Alexander@canada.ca,Shawn.Donohue@canada.ca");
+            mail.To.Add("charles.leblanc2@canada.ca,Greg.Perchard@canada.ca,Ryan.Alexander@canada.ca,David.Halliwell@canada.ca,Patrice.Godin@canada.ca");
 
             //mail.From = new MailAddress("Test1.User@ssctest.itsso.gc.ca");
             mail.From = new MailAddress("ec.pccsm-cssp.ec@canada.ca");
@@ -56,8 +56,6 @@ namespace PushNotification
 
             MailMessage mail = new System.Net.Mail.MailMessage();
 
-            //mail.To.Add("NB_CSSP_Coordination_PCCSM@inspection.gc.ca,Florence.Albert@dfo-mpo.gc.ca,Arthur.LeBlanc@dfo-mpo.gc.ca,catherine.cyr@dfo-mpo.gc.ca,Joanne.Leger@dfo-mpo.gc.ca,edmond.martin@dfo-mpo.gc.ca,Rachel.Friolet@dfo-mpo.gc.ca,kim.theriault@dfo-mpo.gc.ca,bernard.richard@canada.ca,patrice.godin@canada.ca,shawn.donohue@canada.ca,ec.sqematlantique-mwqmatlantic.ec@canada.ca,Lisa.M.Robichaud@dfo-mpo.gc.ca,ryan.alexander@canada.ca,lab@ecwinc.org,charles.leblanc2@canada.ca");
-            //mail.To.Add("ec.sqematlantique-mwqmatlantic.ec@canada.ca,Closure-Fermeture@dfo-mpo.gc.ca,NB_CSSP_Coordination_PCCSM@inspection.gc.ca,Arthur.LeBlanc@dfo-mpo.gc.ca,Joanne.Leger@dfo-mpo.gc.ca,stephen.lanteigne@dfo-mpo.gc.ca,florence.albert@dfo-mpo.gc.ca,kim.theriault@dfo-mpo.gc.ca,Rachel.Friolet@dfo-mpo.gc.ca,bernard.richard@canada.ca,patrice.godin@canada.ca,timothy.leblanc@gnb.ca,sylvie.morton@gnb.ca,Susan.Tao@gnb.ca,Denis.Chenard@gnb.ca,Brad.McPherson@gnb.ca,Maryline.Mallet@gnb.ca,helene.lacroix@gnb.ca,bernice.losier@inspection.gc.ca,nicole.tilley@inspection.gc.ca,grace.mellano@dfo-mpo.gc.ca,christopher.roberts@canada.ca,charles.leblanc2@canada.ca,paul.klaamas@canada.ca,jeffrey.stobo@canada.ca,robert.gaudet2@canada.ca,don.walter@canada.ca,joe.pomeroy@canada.ca,roy.leon-morales@canada.ca");
             mail.To.Add("CSSPClosure@dfo-mpo.gc.ca,NB_CSSP_Coordination_PCCSM@inspection.gc.ca,bernice.losier@inspection.gc.ca,gilles.obrien@inspection.gc.ca,grace.mellano@dfo-mpo.gc.ca,eric.chiasson@dfo-mpo.gc.ca,john.cormier@dfo-mpo.gc.ca,christopher.roberts@canada.ca,paul.klaamas@canada.ca,jeffrey.stobo@canada.ca,charles.leblanc2@canada.ca,robert.gaudet2@canada.ca,don.walter@canada.ca,joe.pomeroy@canada.ca,ec.sqematlantique-mwqmatlantic.ec@canada.ca,florence.pelet@canada.ca,joanne.leger@dfo-mpo.gc.ca,heidi.corrigan@inspection.gc.ca,jan.tarr@inspection.gc.ca,albert.comeau@inspection.gc.ca,karine.arsenault@inspection.gc.ca,stephen.lanteigne@dfo-mpo.gc.ca,florence.albert@dfo-mpo.gc.ca,gabriel.albert@dfo-mpo.gc.ca,rachel.friolet@dfo-mpo.gc.ca,jacques.hache@dfo-mpo.gc.ca,bernard.richard@canada.ca,patrice.godin@canada.ca,celine.godin@gnb.ca");
 
             //mail.To.Add(caraList);
