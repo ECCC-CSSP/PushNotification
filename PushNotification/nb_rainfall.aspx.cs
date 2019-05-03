@@ -210,7 +210,7 @@ namespace PushNotification
 
                         MailMessage mail = new System.Net.Mail.MailMessage();
 
-                        mail.To.Add("bernard.richard@canada.ca,patrice.godin@canada.ca,Christopher.Roberts@canada.ca,charles.leblanc2@canada.ca");
+                        mail.To.Add("bernard.richard@canada.ca,patrice.godin@canada.ca,Christopher.Roberts@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
 
 
                         //mail.To.Add(caraList);
