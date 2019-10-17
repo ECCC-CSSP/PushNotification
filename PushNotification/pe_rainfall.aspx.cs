@@ -8,11 +8,28 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Security.Cryptography.X509Certificates;
+using System.Net.Security;
 
 namespace PushNotification
 {
     public partial class pe_rainfall : System.Web.UI.Page
     {
+        private static bool ValidateRemoteCertificate(object sender, X509Certificate cert, X509Chain chain, SslPolicyErrors error)
+        {
+            // If the certificate is a valid, signed certificate, return true.
+            if (error == System.Net.Security.SslPolicyErrors.None)
+            {
+                return true;
+            }
+
+            Console.WriteLine("X509Certificate [{0}] Policy Error: '{1}'",
+                cert.Subject,
+                error.ToString());
+
+            return false;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //get today's date
@@ -31,120 +48,113 @@ namespace PushNotification
 
             
             //set xml documents based on date
-            string xmldoc = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + myDate.ToString(format) + "_e.xml";
-            //string xmldoc = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_20120111_e.xml";
-            //string xmldocPrev = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_20120111_e.xml";
-            string xmldocPrev = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + preDay.ToString(format) + "_e.xml";
+            string xmldocURL = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + myDate.ToString(format) + "_e.xml";
+            //string xmldoc = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_20120111_e.xml";
+            //string xmldocPrev = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_20120111_e.xml";
+            string xmldocPrevURL = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + preDay.ToString(format) + "_e.xml";
 
             //get xml docs to display 5 days
-            string xmldocPrevPrev = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + prepreDay.ToString(format) + "_e.xml";
-            string xmlDoc3pre = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + pre3Day.ToString(format) + "_e.xml";
-            string xmlDoc4pre = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + pre4Day.ToString(format) + "_e.xml";
+            string xmldocPrevPrevURL = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + prepreDay.ToString(format) + "_e.xml";
+            string xmlDoc3preURL = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + pre3Day.ToString(format) + "_e.xml";
+            string xmlDoc4preURL = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + pre4Day.ToString(format) + "_e.xml";
+
+
+            string xmldoc = "";
+            string xmldocPrev = "";
+            string xmldocPrevPrev = "";
+            string xmlDoc3pre = "";
+            string xmlDoc4pre = "";
+            using (WebClient webClient = new WebClient())
+            {
+                ServicePointManager.ServerCertificateValidationCallback += ValidateRemoteCertificate;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+                xmldoc = webClient.DownloadString(new Uri(xmldocURL));
+                xmldocPrev = webClient.DownloadString(new Uri(xmldocPrevURL));
+                xmldocPrevPrev = webClient.DownloadString(new Uri(xmldocPrevPrevURL));
+                xmlDoc3pre = webClient.DownloadString(new Uri(xmlDoc3preURL));
+                xmlDoc4pre = webClient.DownloadString(new Uri(xmlDoc4preURL));
+
+
+            }
 
 
             //load xml file accordingly
-            XElement myelement = XElement.Load(xmldoc);
-            XElement myelementPrev = XElement.Load(xmldocPrev);
+            XElement myelement = XDocument.Parse(xmldoc).Root;
+            XElement myelementPrev = XDocument.Parse(xmldocPrev).Root;
 
             //display purposes
-            XElement myelementPrevPrev = XElement.Load(xmldocPrevPrev);
-            XElement myelement3pre = XElement.Load(xmlDoc3pre);
-            XElement myelement4pre = XElement.Load(xmlDoc4pre);
+            XElement myelementPrevPrev = XDocument.Parse(xmldocPrevPrev).Root;
+            XElement myelement3pre = XDocument.Parse(xmlDoc3pre).Root;
+            XElement myelement4pre = XDocument.Parse(xmlDoc4pre).Root;
+
+            ////load xml file accordingly
+            //XElement myelement = XElement.Load(xmldoc);
+            //XElement myelementPrev = XElement.Load(xmldocPrev);
+
+            ////display purposes
+            //XElement myelementPrevPrev = XElement.Load(xmldocPrevPrev);
+            //XElement myelement3pre = XElement.Load(xmlDoc3pre);
+            //XElement myelement4pre = XElement.Load(xmlDoc4pre);
 
 
-            //set namespace to access nodes
-            XNamespace obs = "http://dms.ec.gc.ca/schema/point-observation/2.0";
-            XNamespace obsNew = "http://dms.ec.gc.ca/schema/point-observation/2.1";
+            ////set namespace to access nodes
+            //XNamespace obs = "http://dms.ec.gc.ca/schema/point-observation/2.0";
+            //XNamespace obsNew = "http://dms.ec.gc.ca/schema/point-observation/2.1";
 
             //create query to extract station name
-            var observations = (from myVal in myelement.Descendants(obs + "element")
+            var observations = (from myVal in myelement.Descendants()
                                 where (string)myVal.Attribute("name") == "station_name"
                                 select new
                                 {
                                     Station_Name = myVal.Attribute("value").Value
-                                }).Concat((from myVal in myelement.Descendants(obsNew + "element")
-                                           where (string)myVal.Attribute("name") == "station_name"
-                                           select new
-                                           {
-                                               Station_Name = myVal.Attribute("value").Value
-                                           }));
+                                });
 
             //create query to extract precip from current day
-            var precip = (from myVal in myelement.Descendants(obs + "element")
+            var precip = (from myVal in myelement.Descendants()
                           where (string)myVal.Attribute("name") == "total_precipitation"
                           select new
                           {
                               //name = myVal.Attribute("name").Value,
                               Today = myVal.Attribute("value").Value
 
-                          }).Concat(from myVal in myelement.Descendants(obsNew + "element")
-                                    where (string)myVal.Attribute("name") == "total_precipitation"
-                                    select new
-                                    {
-                                        //name = myVal.Attribute("name").Value,
-                                        Today = myVal.Attribute("value").Value
-
-                                    });
+                          });
 
             //create query to extract precip from previous day
-            var precipPrev = (from myVal in myelementPrev.Descendants(obs + "element")
+            var precipPrev = (from myVal in myelementPrev.Descendants()
                               where (string)myVal.Attribute("name") == "total_precipitation"
                               select new
                               {
                                   //name = myVal.Attribute("name").Value,
                                   Yesterday = myVal.Attribute("value").Value
-                              }).Concat(from myVal in myelementPrev.Descendants(obsNew + "element")
-                                        where (string)myVal.Attribute("name") == "total_precipitation"
-                                        select new
-                                        {
-                                            //name = myVal.Attribute("name").Value,
-                                            Yesterday = myVal.Attribute("value").Value
-                                        });
+                              });
 
             //create query to extract precip from 2 previous days
-            var precipPrevPrev = (from myVal in myelementPrevPrev.Descendants(obs + "element")
+            var precipPrevPrev = (from myVal in myelementPrevPrev.Descendants()
                                   where (string)myVal.Attribute("name") == "total_precipitation"
                                   select new
                                   {
                                       //name = myVal.Attribute("name").Value,
                                       Day_Before = myVal.Attribute("value").Value
-                                  }).Concat(from myVal in myelementPrevPrev.Descendants(obsNew + "element")
-                                            where (string)myVal.Attribute("name") == "total_precipitation"
-                                            select new
-                                            {
-                                                //name = myVal.Attribute("name").Value,
-                                                Day_Before = myVal.Attribute("value").Value
-                                            });
+                                  });
 
             //create query to extract precip from 3 previous days            
-            var precip3Prev = (from myVal in myelement3pre.Descendants(obs + "element")
+            var precip3Prev = (from myVal in myelement3pre.Descendants()
                                where (string)myVal.Attribute("name") == "total_precipitation"
                                select new
                                {
                                    //name = myVal.Attribute("name").Value,
                                    Day_Before = myVal.Attribute("value").Value
-                               }).Concat(from myVal in myelement3pre.Descendants(obsNew + "element")
-                                         where (string)myVal.Attribute("name") == "total_precipitation"
-                                         select new
-                                         {
-                                             //name = myVal.Attribute("name").Value,
-                                             Day_Before = myVal.Attribute("value").Value
-                                         });
+                               });
 
             //create query to extract precip from 4 previous days
-            var precip4Prev = (from myVal in myelement4pre.Descendants(obs + "element")
+            var precip4Prev = (from myVal in myelement4pre.Descendants()
                                where (string)myVal.Attribute("name") == "total_precipitation"
                                select new
                                {
                                    //name = myVal.Attribute("name").Value,
                                    Day_Before = myVal.Attribute("value").Value
-                               }).Concat(from myVal in myelement4pre.Descendants(obsNew + "element")
-                                         where (string)myVal.Attribute("name") == "total_precipitation"
-                                         select new
-                                         {
-                                             //name = myVal.Attribute("name").Value,
-                                             Day_Before = myVal.Attribute("value").Value
-                                         });
+                               });
 
 
             //set gridview datasource and bind

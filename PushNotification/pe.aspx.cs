@@ -61,15 +61,15 @@ namespace PushNotification
 
 
             //set xml documents based on date
-            string xmldoc = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + myDate.ToString(format) + "_e.xml";
-            //string xmldoc = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_20120111_e.xml";
-            //string xmldocPrev = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_20120111_e.xml";
-            string xmldocPrev = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + preDay.ToString(format) + "_e.xml";
+            string xmldoc = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + myDate.ToString(format) + "_e.xml";
+            //string xmldoc = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_20120111_e.xml";
+            //string xmldocPrev = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_20120111_e.xml";
+            string xmldocPrev = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + preDay.ToString(format) + "_e.xml";
 
             //get xml docs to display 5 days
-            string xmldocPrevPrev = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + prepreDay.ToString(format) + "_e.xml";
-            string xmlDoc3pre = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + pre3Day.ToString(format) + "_e.xml";
-            string xmlDoc4pre = "http://dd.weatheroffice.ec.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + pre4Day.ToString(format) + "_e.xml";
+            string xmldocPrevPrev = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + prepreDay.ToString(format) + "_e.xml";
+            string xmlDoc3pre = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + pre3Day.ToString(format) + "_e.xml";
+            string xmlDoc4pre = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + pre4Day.ToString(format) + "_e.xml";
 
 
             //load xml file accordingly
