@@ -203,13 +203,13 @@ namespace PushNotification
             //set the time frame for each area
             //caraquet
             //Sep 20 - Nov 15
-            DateTime basStart = new DateTime(2019, 09, 20);
-            DateTime basEnd = new DateTime(2019, 11, 15);
+            DateTime basStart = new DateTime(2020, 09, 20);
+            DateTime basEnd = new DateTime(2020, 11, 15);
 
             //tabusintac Bay
             //Sep 20 - Nov 16
-            DateTime tabStart = new DateTime(2019, 09, 20);
-            DateTime tabEnd = new DateTime(2019, 11, 16);
+            DateTime tabStart = new DateTime(2020, 09, 20);
+            DateTime tabEnd = new DateTime(2020, 11, 16);
 
             //pocologan harbour
             //Nov 1 - Mar 31
@@ -1506,7 +1506,7 @@ namespace PushNotification
                                     rainAmount = my48hr.ToString();
                                     precipStation = "Point Lepreau(Backup Station)";
                                     timeFrame = "48";
-                                    CMPArea = "Baie de Caraquet";
+                                    CMPArea = "OAK BAY / WAWEIG RIVER";
 
                                     SendMail2(rainAmount, precipStation, timeFrame, CMPArea);
                                 }
