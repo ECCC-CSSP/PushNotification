@@ -214,8 +214,8 @@ namespace PushNotification
             //pocologan harbour
             //Nov 1 - Mar 31
             //need to take care of the date when the years change.
-            DateTime pocoStart = new DateTime(2019, 11, 01);
-            DateTime pocoEnd = new DateTime(2020, 03, 31);
+            DateTime pocoStart = new DateTime(2020, 11, 01);
+            DateTime pocoEnd = new DateTime(2021, 03, 31);
 
             //letang harbour – Rain CMP eliminated (no rain criteria)
             //Nov 1 - Mar 31
@@ -226,20 +226,20 @@ namespace PushNotification
             //digdeguash harbour
             //Oct 1 - Apr 30
             //need to take care of the date when the year changes.
-            DateTime digStart = new DateTime(2019, 10, 01);
-            DateTime digEnd = new DateTime(2020, 04, 30);
+            DateTime digStart = new DateTime(2020, 10, 01);
+            DateTime digEnd = new DateTime(2021, 04, 30);
 
             //boca river & mill cove
             //Oct 1 - Apr 30
             //need to take care of the date when the year changes.
-            DateTime bocMillStart = new DateTime(2019, 10, 01);
-            DateTime bocMillEnd = new DateTime(2020, 04, 30);
+            DateTime bocMillStart = new DateTime(2020, 10, 01);
+            DateTime bocMillEnd = new DateTime(2021, 04, 30);
 
             //oak bay & waweig river
             //Nov 1 - Mar 31
             //need to take care of the date when the year changes.
-            DateTime oakWawStart = new DateTime(2019, 11, 01);
-            DateTime oakWawEnd = new DateTime(2020, 03, 31);
+            DateTime oakWawStart = new DateTime(2020, 11, 01);
+            DateTime oakWawEnd = new DateTime(2021, 03, 31);
 
 
 

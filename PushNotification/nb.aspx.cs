@@ -48,33 +48,33 @@ namespace PushNotification
             //set the time frame for each area
             //bas caraquet
             //Sep 26 - Oct 29
-            DateTime basStart = new DateTime(DateTime.Now.Year, 09, 26);
-            DateTime basEnd = new DateTime(DateTime.Now.Year, 10, 29);
+            DateTime basStart = new DateTime(2020, 09, 26);
+            DateTime basEnd = new DateTime(2020, 10, 29);
 
             //pocologan harbour
             //Nov 1 - May 1
-            DateTime pocoStart = new DateTime(DateTime.Now.Year - 1, 11, 01);
-            DateTime pocoEnd = new DateTime(DateTime.Now.Year, 05, 01);
+            DateTime pocoStart = new DateTime(2020, 11, 01);
+            DateTime pocoEnd = new DateTime(2021, 05, 01);
 
             //letang harbour
             //May 1 - Sep 30
-            DateTime letangStart = new DateTime(DateTime.Now.Year, 05, 01);
-            DateTime letangEnd = new DateTime(DateTime.Now.Year, 09, 30);
+            DateTime letangStart = new DateTime(2020, 05, 01);
+            DateTime letangEnd = new DateTime(2020, 09, 30);
 
             //digdeguash harbour
             //Nov 14 - May 1
-            DateTime digStart = new DateTime(DateTime.Now.Year - 1, 11, 14);
-            DateTime digEnd = new DateTime(DateTime.Now.Year, 05, 01);
+            DateTime digStart = new DateTime(2020, 11, 14);
+            DateTime digEnd = new DateTime(2021, 05, 01);
 
             //boca river & mill cove
             //Oct 1 - May 1
-            DateTime bocMillStart = new DateTime(DateTime.Now.Year - 1, 10, 01);
-            DateTime bocMillEnd = new DateTime(DateTime.Now.Year, 05, 01);
+            DateTime bocMillStart = new DateTime(2020, 10, 01);
+            DateTime bocMillEnd = new DateTime(2021, 05, 01);
 
             //oak bay& waweig river
             //Dec 1 - Mar 31
-            DateTime oakWawStart = new DateTime(DateTime.Now.Year - 1, 12, 01);
-            DateTime oakWawEnd = new DateTime(DateTime.Now.Year, 03, 31);
+            DateTime oakWawStart = new DateTime(2020, 12, 01);
+            DateTime oakWawEnd = new DateTime(2021, 03, 31);
 
 
 
