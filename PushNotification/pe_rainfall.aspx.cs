@@ -233,7 +233,7 @@ namespace PushNotification
 
                         //mail.To.Add(caraList);
                         //mail.To.Add(let_Dig_Bo_Oak_List);
-                        //mail.To.Add("bernard.richard@canada.ca,patrice.godin@canada.ca,ryan.alexander@canada.ca");
+                        //mail.To.Add("patrice.godin@canada.ca,patrice.godin@canada.ca,ryan.alexander@canada.ca");
                         mail.From = new MailAddress("ec.pccsm-cssp.ec@canada.ca");
                         //mail.Subject = subject;
                         //mail.Body = msg;
@@ -340,7 +340,7 @@ namespace PushNotification
 
             //    //mail.To.Add(caraList);
             //    //mail.To.Add(let_Dig_Bo_Oak_List);
-            //    //mail.To.Add("bernard.richard@canada.ca,patrice.godin@canada.ca,ryan.alexander@canada.ca");
+            //    //mail.To.Add("patrice.godin@canada.ca,patrice.godin@canada.ca,ryan.alexander@canada.ca");
             //    mail.From = new MailAddress("ryan.alexander@canada.ca");
             //    //mail.Subject = subject;
             //    //mail.Body = msg;
