@@ -25,7 +25,8 @@ namespace PushNotification
             MailMessage mail = new System.Net.Mail.MailMessage();
 
             //mail.To.Add("Test1.User@ssctest.itsso.gc.ca");
-            mail.To.Add("charles.leblanc2@canada.ca,Greg.Perchard@canada.ca,Ryan.Alexander@canada.ca,David.Halliwell@canada.ca,Patrice.Godin@canada.ca,Joe.Pomeroy@canada.ca,Karyne.Martell2@canada.ca");
+            //mail.To.Add("charles.leblanc2@canada.ca,Greg.Perchard@canada.ca,Ryan.Alexander@canada.ca,David.Halliwell@canada.ca,Patrice.Godin@canada.ca,Joe.Pomeroy@canada.ca,Karyne.Martell2@canada.ca");
+            mail.To.Add("charles.leblanc2@canada.ca,Greg.Perchard@canada.ca,David.Halliwell@canada.ca,Patrice.Godin@canada.ca,Joe.Pomeroy@canada.ca,Karyne.Martell2@canada.ca");
 
             //mail.From = new MailAddress("Test1.User@ssctest.itsso.gc.ca");
             mail.From = new MailAddress("ec.pccsm-cssp.ec@canada.ca");
@@ -557,7 +558,8 @@ namespace PushNotification
 
                     MailMessage mail = new System.Net.Mail.MailMessage();
 
-                    mail.To.Add("Ryan.Alexander@canada.ca,patrice.godin@canada.ca,Patrice.Godin@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
+                    //mail.To.Add("Ryan.Alexander@canada.ca,patrice.godin@canada.ca,Patrice.Godin@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
+                    mail.To.Add("patrice.godin@canada.ca,Patrice.Godin@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
 
                     mail.From = new MailAddress("ec.pccsm-cssp.ec@canada.ca");
 
@@ -791,7 +793,8 @@ namespace PushNotification
 
                     MailMessage mail = new System.Net.Mail.MailMessage();
 
-                    mail.To.Add("Ryan.Alexander@canada.ca,patrice.godin@canada.ca,Patrice.Godin@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
+                    //mail.To.Add("Ryan.Alexander@canada.ca,patrice.godin@canada.ca,Patrice.Godin@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
+                    mail.To.Add("patrice.godin@canada.ca,Patrice.Godin@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
 
                     mail.From = new MailAddress("ec.pccsm-cssp.ec@canada.ca");
 
@@ -1042,7 +1045,8 @@ namespace PushNotification
 
                     MailMessage mail = new System.Net.Mail.MailMessage();
 
-                    mail.To.Add("Ryan.Alexander@canada.ca,patrice.godin@canada.ca,Patrice.Godin@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
+                    //mail.To.Add("Ryan.Alexander@canada.ca,patrice.godin@canada.ca,Patrice.Godin@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
+                    mail.To.Add("patrice.godin@canada.ca,Patrice.Godin@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
 
                     mail.From = new MailAddress("ec.pccsm-cssp.ec@canada.ca");
 
@@ -1367,7 +1371,8 @@ namespace PushNotification
 
                     MailMessage mail = new System.Net.Mail.MailMessage();
 
-                    mail.To.Add("Ryan.Alexander@canada.ca,patrice.godin@canada.ca,Patrice.Godin@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
+                    //mail.To.Add("Ryan.Alexander@canada.ca,patrice.godin@canada.ca,Patrice.Godin@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
+                    mail.To.Add("patrice.godin@canada.ca,Patrice.Godin@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
 
                     mail.From = new MailAddress("ec.pccsm-cssp.ec@canada.ca");
 
