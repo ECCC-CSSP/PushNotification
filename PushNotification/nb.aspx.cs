@@ -46,35 +46,45 @@ namespace PushNotification
             DateTime pre4Day = DateTime.Today.AddDays(-4);
 
             //set the time frame for each area
-            //bas caraquet
-            //Sep 26 - Oct 29
-            DateTime basStart = new DateTime(2020, 09, 26);
-            DateTime basEnd = new DateTime(2020, 10, 29);
+            //caraquet
+            //Sep 20 - Nov 15
+            DateTime basStart = new DateTime(2021, 09, 20);
+            DateTime basEnd = new DateTime(2021, 11, 15);
+
+            //tabusintac Bay
+            //Sep 20 - Nov 16
+            DateTime tabStart = new DateTime(2021, 09, 20);
+            DateTime tabEnd = new DateTime(2021, 11, 16);
 
             //pocologan harbour
-            //Nov 1 - May 1
-            DateTime pocoStart = new DateTime(2020, 11, 01);
-            DateTime pocoEnd = new DateTime(2021, 05, 01);
+            //Nov 1 - Mar 31
+            //need to take care of the date when the years change.
+            DateTime pocoStart = new DateTime(2021, 11, 01);
+            DateTime pocoEnd = new DateTime(2022, 03, 31);
 
-            //letang harbour
-            //May 1 - Sep 30
-            DateTime letangStart = new DateTime(2020, 05, 01);
-            DateTime letangEnd = new DateTime(2020, 09, 30);
+            //letang harbour – Rain CMP eliminated (no rain criteria)
+            //Nov 1 - Mar 31
+            //need to take care of the date when the year changes.
+            //DateTime letangStart = new DateTime(2017, 11, 01);
+            //DateTime letangEnd = new DateTime(2019, 03, 31);
 
             //digdeguash harbour
-            //Nov 14 - May 1
-            DateTime digStart = new DateTime(2020, 11, 14);
-            DateTime digEnd = new DateTime(2021, 05, 01);
+            //Oct 1 - Apr 30
+            //need to take care of the date when the year changes.
+            DateTime digStart = new DateTime(2021, 10, 01);
+            DateTime digEnd = new DateTime(2022, 04, 30);
 
             //boca river & mill cove
-            //Oct 1 - May 1
-            DateTime bocMillStart = new DateTime(2020, 10, 01);
-            DateTime bocMillEnd = new DateTime(2021, 05, 01);
+            //Oct 1 - Apr 30
+            //need to take care of the date when the year changes.
+            DateTime bocMillStart = new DateTime(2021, 10, 01);
+            DateTime bocMillEnd = new DateTime(2022, 04, 30);
 
-            //oak bay& waweig river
-            //Dec 1 - Mar 31
-            DateTime oakWawStart = new DateTime(2020, 12, 01);
-            DateTime oakWawEnd = new DateTime(2021, 03, 31);
+            //oak bay & waweig river
+            //Nov 1 - Mar 31
+            //need to take care of the date when the year changes.
+            DateTime oakWawStart = new DateTime(2021, 11, 01);
+            DateTime oakWawEnd = new DateTime(2022, 03, 31);
 
 
 
