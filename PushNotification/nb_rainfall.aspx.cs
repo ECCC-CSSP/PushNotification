@@ -224,24 +224,14 @@ namespace PushNotification
 
                         mail.To.Add("patrice.godin@canada.ca,patrice.godin@canada.ca,Christopher.Roberts@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
 
-
-                        //mail.To.Add(caraList);
-                        //mail.To.Add(let_Dig_Bo_Oak_List);
-                        //mail.To.Add("patrice.godin@canada.ca,patrice.godin@canada.ca,ryan.alexander@canada.ca");
-                        mail.From = new MailAddress("ec.pccsm-cssp.ec@canada.ca");
-                        //mail.Subject = subject;
-                        //mail.Body = msg;
+                        mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
                         mail.IsBodyHtml = true;
-
 
                         SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-                        //myClient.Host = "smtp.ctst.email-courriel.canada.ca";
-                        myClient.Host = "smtp.email-courriel.canada.ca";
+                        myClient.Host = "mail.ec.gc.ca";
                         myClient.Port = 587;
-                        //myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
-                        //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
-                        myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+                        myClient.Credentials = new System.Net.NetworkCredential("pccsm-cssp@ec.gc.ca", "Gt=UJZ3g]8_P86Q]::p0F(%=$_OL_Y");
                         myClient.EnableSsl = true;
 
                         //    subject = "TEST -- RAINFALL CRITERION EXCEEDED - " + CMPArea + " CMP";
@@ -439,7 +429,7 @@ namespace PushNotification
             //    //mail.To.Add(caraList);
             //    //mail.To.Add(let_Dig_Bo_Oak_List);
             //    mail.To.Add("patrice.godin@canada.ca,patrice.godin@canada.ca,ryan.alexander@canada.ca");
-            //    mail.From = new MailAddress("ec.pccsm-cssp.ec@canada.ca");
+            //    mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
             //    //mail.Subject = subject;
             //    //mail.Body = msg;
             //    mail.IsBodyHtml = true;
@@ -448,11 +438,11 @@ namespace PushNotification
             //    SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
             ////myClient.Host = "smtp.ctst.email-courriel.canada.ca";
-            //myClient.Host = "smtp.email-courriel.canada.ca";
+            //myClient.Host = "mail.ec.gc.ca";
             //myClient.Port = 587;
             ////myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
             ////myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
-            //myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@canada.ca", "H^9h6g@Gy$N57k=Dr@J7=F2y6p6b!T");
+            //myClient.Credentials = new System.Net.NetworkCredential("pccsm-cssp@ec.gc.ca", "Gt=UJZ3g]8_P86Q]::p0F(%=$_OL_Y");
             //myClient.EnableSsl = true;
 
             //    //    subject = "TEST -- RAINFALL CRITERION EXCEEDED - " + CMPArea + " CMP";
