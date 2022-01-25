@@ -77,8 +77,8 @@ namespace PushNotification
 
             //get xml docs to display 5 days
             string xmldocPrevPrev = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + prepreDay.ToString(format) + "_e.xml";
-            string xmlDoc3pre = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + pre3Day.ToString(format) + "_e.xml";
-            string xmlDoc4pre = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + pre4Day.ToString(format) + "_e.xml";
+            //string xmlDoc3pre = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + pre3Day.ToString(format) + "_e.xml";
+            //string xmlDoc4pre = "https://dd.weather.gc.ca/observations/xml/PE/yesterday/yesterday_pe_" + pre4Day.ToString(format) + "_e.xml";
 
 
             //load xml file accordingly
@@ -87,8 +87,8 @@ namespace PushNotification
 
             //display purposes
             XElement myelementPrevPrev = XElement.Load(xmldocPrevPrev);
-            XElement myelement3pre = XElement.Load(xmlDoc3pre);
-            XElement myelement4pre = XElement.Load(xmlDoc4pre);
+            //XElement myelement3pre = XElement.Load(xmlDoc3pre);
+            //XElement myelement4pre = XElement.Load(xmlDoc4pre);
 
 
             //set namespace to access nodes
@@ -155,35 +155,35 @@ namespace PushNotification
                                                 Day_Before = myVal.Attribute("value").Value
                                             });
 
-            //create query to extract precip from 3 previous days            
-            var precip3Prev = (from myVal in myelement3pre.Descendants(obs + "element")
-                               where (string)myVal.Attribute("name") == "total_precipitation"
-                               select new
-                               {
-                                   //name = myVal.Attribute("name").Value,
-                                   Day_Before = myVal.Attribute("value").Value
-                               }).Concat(from myVal in myelement3pre.Descendants(obsNew + "element")
-                                         where (string)myVal.Attribute("name") == "total_precipitation"
-                                         select new
-                                         {
-                                             //name = myVal.Attribute("name").Value,
-                                             Day_Before = myVal.Attribute("value").Value
-                                         });
+            ////create query to extract precip from 3 previous days            
+            //var precip3Prev = (from myVal in myelement3pre.Descendants(obs + "element")
+            //                   where (string)myVal.Attribute("name") == "total_precipitation"
+            //                   select new
+            //                   {
+            //                       //name = myVal.Attribute("name").Value,
+            //                       Day_Before = myVal.Attribute("value").Value
+            //                   }).Concat(from myVal in myelement3pre.Descendants(obsNew + "element")
+            //                             where (string)myVal.Attribute("name") == "total_precipitation"
+            //                             select new
+            //                             {
+            //                                 //name = myVal.Attribute("name").Value,
+            //                                 Day_Before = myVal.Attribute("value").Value
+            //                             });
 
-            //create query to extract precip from 4 previous days
-            var precip4Prev = (from myVal in myelement4pre.Descendants(obs + "element")
-                               where (string)myVal.Attribute("name") == "total_precipitation"
-                               select new
-                               {
-                                   //name = myVal.Attribute("name").Value,
-                                   Day_Before = myVal.Attribute("value").Value
-                               }).Concat(from myVal in myelement4pre.Descendants(obsNew + "element")
-                                         where (string)myVal.Attribute("name") == "total_precipitation"
-                                         select new
-                                         {
-                                             //name = myVal.Attribute("name").Value,
-                                             Day_Before = myVal.Attribute("value").Value
-                                         });
+            ////create query to extract precip from 4 previous days
+            //var precip4Prev = (from myVal in myelement4pre.Descendants(obs + "element")
+            //                   where (string)myVal.Attribute("name") == "total_precipitation"
+            //                   select new
+            //                   {
+            //                       //name = myVal.Attribute("name").Value,
+            //                       Day_Before = myVal.Attribute("value").Value
+            //                   }).Concat(from myVal in myelement4pre.Descendants(obsNew + "element")
+            //                             where (string)myVal.Attribute("name") == "total_precipitation"
+            //                             select new
+            //                             {
+            //                                 //name = myVal.Attribute("name").Value,
+            //                                 Day_Before = myVal.Attribute("value").Value
+            //                             });
 
 
 
@@ -214,13 +214,13 @@ namespace PushNotification
             gviewPrecPrevPrev.DataBind();
             gviewPrecPrevPrev.HeaderRow.Cells[0].Text = prepreDay.AddDays(-1).ToShortDateString();
 
-            //to display another 2 days
-            gview3pre.DataSource = precip3Prev;
-            gview3pre.DataBind();
-            gview3pre.HeaderRow.Cells[0].Text = pre3Day.AddDays(-1).ToShortDateString();
-            gview4pre.DataSource = precip4Prev;
-            gview4pre.DataBind();
-            gview4pre.HeaderRow.Cells[0].Text = pre4Day.AddDays(-1).ToShortDateString();
+            ////to display another 2 days
+            //gview3pre.DataSource = precip3Prev;
+            //gview3pre.DataBind();
+            //gview3pre.HeaderRow.Cells[0].Text = pre3Day.AddDays(-1).ToShortDateString();
+            //gview4pre.DataSource = precip4Prev;
+            //gview4pre.DataBind();
+            //gview4pre.HeaderRow.Cells[0].Text = pre4Day.AddDays(-1).ToShortDateString();
 
         }
         

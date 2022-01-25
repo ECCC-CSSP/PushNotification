@@ -56,14 +56,14 @@ namespace PushNotification
 
             //get xml docs to display 5 days
             string xmldocPrevPrevURL = "https://dd.weather.gc.ca/observations/xml/NL/yesterday/yesterday_nl_" + prepreDay.ToString(format) + "_e.xml";
-            string xmlDoc3preURL = "https://dd.weather.gc.ca/observations/xml/NL/yesterday/yesterday_nl_" + pre3Day.ToString(format) + "_e.xml";
-            string xmlDoc4preURL = "https://dd.weather.gc.ca/observations/xml/NL/yesterday/yesterday_nl_" + pre4Day.ToString(format) + "_e.xml";
+            //string xmlDoc3preURL = "https://dd.weather.gc.ca/observations/xml/NL/yesterday/yesterday_nl_" + pre3Day.ToString(format) + "_e.xml";
+            //string xmlDoc4preURL = "https://dd.weather.gc.ca/observations/xml/NL/yesterday/yesterday_nl_" + pre4Day.ToString(format) + "_e.xml";
 
             string xmldoc = "";
             string xmldocPrev = "";
             string xmldocPrevPrev = "";
-            string xmlDoc3pre = "";
-            string xmlDoc4pre = "";
+            //string xmlDoc3pre = "";
+            //string xmlDoc4pre = "";
             using (WebClient webClient = new WebClient())
             {
                 ServicePointManager.ServerCertificateValidationCallback += ValidateRemoteCertificate;
@@ -72,8 +72,8 @@ namespace PushNotification
                 xmldoc = webClient.DownloadString(new Uri(xmldocURL));
                 xmldocPrev = webClient.DownloadString(new Uri(xmldocPrevURL));
                 xmldocPrevPrev = webClient.DownloadString(new Uri(xmldocPrevPrevURL));
-                xmlDoc3pre = webClient.DownloadString(new Uri(xmlDoc3preURL));
-                xmlDoc4pre = webClient.DownloadString(new Uri(xmlDoc4preURL));
+                //xmlDoc3pre = webClient.DownloadString(new Uri(xmlDoc3preURL));
+                //xmlDoc4pre = webClient.DownloadString(new Uri(xmlDoc4preURL));
 
 
             }
@@ -85,8 +85,8 @@ namespace PushNotification
 
             //display purposes
             XElement myelementPrevPrev = XDocument.Parse(xmldocPrevPrev).Root;
-            XElement myelement3pre = XDocument.Parse(xmlDoc3pre).Root;
-            XElement myelement4pre = XDocument.Parse(xmlDoc4pre).Root;
+            //XElement myelement3pre = XDocument.Parse(xmlDoc3pre).Root;
+            //XElement myelement4pre = XDocument.Parse(xmlDoc4pre).Root;
 
             ////load xml file accordingly
             //XElement myelement = XElement.Load(xmldoc);
@@ -138,23 +138,23 @@ namespace PushNotification
                                       Day_Before = myVal.Attribute("value").Value
                                   });
 
-            //create query to extract precip from 3 previous days            
-            var precip3Prev = (from myVal in myelement3pre.Descendants()
-                               where (string)myVal.Attribute("name") == "total_precipitation"
-                               select new
-                               {
-                                   //name = myVal.Attribute("name").Value,
-                                   Day_Before = myVal.Attribute("value").Value
-                               });
+            ////create query to extract precip from 3 previous days            
+            //var precip3Prev = (from myVal in myelement3pre.Descendants()
+            //                   where (string)myVal.Attribute("name") == "total_precipitation"
+            //                   select new
+            //                   {
+            //                       //name = myVal.Attribute("name").Value,
+            //                       Day_Before = myVal.Attribute("value").Value
+            //                   });
 
-            //create query to extract precip from 4 previous days
-            var precip4Prev = (from myVal in myelement4pre.Descendants()
-                               where (string)myVal.Attribute("name") == "total_precipitation"
-                               select new
-                               {
-                                   //name = myVal.Attribute("name").Value,
-                                   Day_Before = myVal.Attribute("value").Value
-                               });
+            ////create query to extract precip from 4 previous days
+            //var precip4Prev = (from myVal in myelement4pre.Descendants()
+            //                   where (string)myVal.Attribute("name") == "total_precipitation"
+            //                   select new
+            //                   {
+            //                       //name = myVal.Attribute("name").Value,
+            //                       Day_Before = myVal.Attribute("value").Value
+            //                   });
 
 
             //set gridview datasource and bind
@@ -184,13 +184,13 @@ namespace PushNotification
             gviewPrecPrevPrev.DataBind();
             gviewPrecPrevPrev.HeaderRow.Cells[0].Text = prepreDay.AddDays(-1).ToShortDateString();
 
-            //to display another 2 days
-            gview3pre.DataSource = precip3Prev;
-            gview3pre.DataBind();
-            gview3pre.HeaderRow.Cells[0].Text = pre3Day.AddDays(-1).ToShortDateString();
-            gview4pre.DataSource = precip4Prev;
-            gview4pre.DataBind();
-            gview4pre.HeaderRow.Cells[0].Text = pre4Day.AddDays(-1).ToShortDateString();
+            ////to display another 2 days
+            //gview3pre.DataSource = precip3Prev;
+            //gview3pre.DataBind();
+            //gview3pre.HeaderRow.Cells[0].Text = pre3Day.AddDays(-1).ToShortDateString();
+            //gview4pre.DataSource = precip4Prev;
+            //gview4pre.DataBind();
+            //gview4pre.HeaderRow.Cells[0].Text = pre4Day.AddDays(-1).ToShortDateString();
 
             string response;
 
