@@ -537,7 +537,7 @@ namespace PushNotification
             //    ////mail.To.Add(caraList);
             //    ////mail.To.Add(let_Dig_Bo_Oak_List);
             //    ////mail.To.Add("patrice.godin@canada.ca,patrice.godin@canada.ca,ryan.alexander@canada.ca");
-            //    //mail.From = new MailAddress("ryan.alexander@canada.ca");
+            //    //mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
             //    ////mail.Subject = subject;
             //    ////mail.Body = msg;
             //    //mail.IsBodyHtml = true;

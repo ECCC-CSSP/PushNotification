@@ -36,7 +36,7 @@ namespace PushNotification
 
 
             mail.To.Add("Ryan.Alexander@canada.ca");
-            mail.From = new MailAddress("Ryan.Alexander@canada.ca");
+            mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
             mail.Subject = subject;
             mail.Body = msg;
             mail.IsBodyHtml = true;
@@ -68,7 +68,7 @@ namespace PushNotification
             //myClient.Credentials = new System.Net.NetworkCredential("pccsm-cssp@ec.gc.ca", "Gt=UJZ3g]8_P86Q]::p0F(%=$_OL_Y");
             //myClient.EnableSsl = true;
 
-            //mail.From = new MailAddress("Ryan.Alexander@canada.ca");
+            //mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
 
             //mail.To.Add("david.macarthur@canada.ca");
 
