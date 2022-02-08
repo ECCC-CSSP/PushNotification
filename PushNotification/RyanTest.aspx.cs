@@ -35,7 +35,7 @@ namespace PushNotification
             MailMessage mail = new System.Net.Mail.MailMessage();
 
 
-            mail.To.Add("Ryan.Alexander@canada.ca");
+            mail.To.Add("Ryan.Alexander@ec.gc.ca");
             mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
             mail.Subject = subject;
             mail.Body = msg;
@@ -60,17 +60,15 @@ namespace PushNotification
             //MailMessage mail = new MailMessage();
             //SmtpClient myClient = new SmtpClient("131.235.8.144");
 
-            ////myClient.Host = "smtp.ctst.email-courriel.canada.ca";
-            //myClient.Host = "mail.ec.gc.ca";
+             //myClient.Host = "mail.ec.gc.ca";
             //myClient.Port = 587;
             ////myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
-            ////myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
-            //myClient.Credentials = new System.Net.NetworkCredential("pccsm-cssp@ec.gc.ca", "Gt=UJZ3g]8_P86Q]::p0F(%=$_OL_Y");
+             //myClient.Credentials = new System.Net.NetworkCredential("pccsm-cssp@ec.gc.ca", "Gt=UJZ3g]8_P86Q]::p0F(%=$_OL_Y");
             //myClient.EnableSsl = true;
 
             //mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
 
-            //mail.To.Add("david.macarthur@canada.ca");
+            //mail.To.Add("david.macarthur@ec.gc.ca");
 
             //mail.Subject = "Test Email From Program";
 

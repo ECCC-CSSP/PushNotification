@@ -222,7 +222,7 @@ namespace PushNotification
 
                         MailMessage mail = new System.Net.Mail.MailMessage();
 
-                        mail.To.Add("patrice.godin@canada.ca,patrice.godin@canada.ca,Christopher.Roberts@canada.ca,charles.leblanc2@canada.ca,joe.pomeroy@canada.ca,karyne.martell2@canada.ca");
+                        mail.To.Add("jeffrey.stobo@ec.gc.ca,patrice.godin@ec.gc.ca,Christopher.Roberts@ec.gc.ca,charles.leblanc@ec.gc.ca,joe.pomeroy@ec.gc.ca,karyne.martell@ec.gc.ca");
 
                         mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
                         mail.IsBodyHtml = true;
@@ -422,13 +422,11 @@ namespace PushNotification
 
             //    MailMessage mail = new System.Net.Mail.MailMessage();
 
-            //    //mail.To.Add("lauren.steeves@canada.ca,david.macarthur@canada.ca,ryan.alexander@canada.ca");
-            //    //mail.To.Add("ryan.alexander@canada.ca");
+            //    //mail.To.Add("ryan.alexander@ec.gc.ca");
 
 
             //    //mail.To.Add(caraList);
             //    //mail.To.Add(let_Dig_Bo_Oak_List);
-            //    mail.To.Add("patrice.godin@canada.ca,patrice.godin@canada.ca,ryan.alexander@canada.ca");
             //    mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
             //    //mail.Subject = subject;
             //    //mail.Body = msg;
@@ -437,11 +435,9 @@ namespace PushNotification
 
             //    SmtpClient myClient = new System.Net.Mail.SmtpClient();
 
-            ////myClient.Host = "smtp.ctst.email-courriel.canada.ca";
             //myClient.Host = "mail.ec.gc.ca";
             //myClient.Port = 587;
             ////myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
-            ////myClient.Credentials = new System.Net.NetworkCredential("ec.pccsm-cssp.ec@ctst.canada.ca", "5y3Q^z+B4a7T$F+nQ@9N+r6uE!E87s");
             //myClient.Credentials = new System.Net.NetworkCredential("pccsm-cssp@ec.gc.ca", "Gt=UJZ3g]8_P86Q]::p0F(%=$_OL_Y");
             //myClient.EnableSsl = true;
 
