@@ -25,12 +25,12 @@ namespace PushNotification
             string msg = "Please be advised that <b>" + rainAmount + "</b> mm of rainfall has been recorded at <b>" + precipStation + "</b> in the past <b>" + timeFrame + "</b> hours. " +
                      "As a result of this precipitation event, there is reason to believe that shellfish harvested from the waters of <b>" + CMPArea + "</b> are at risk of being contaminated. " +
                      "In accordance with the Conditional Management Plan for the area, the conditionally-managed waters of <b>" + CMPArea + "</b> should immediately be placed in Closed Status."
-                     + "<br><br>Environment Canada and the CFIA will advise you when the area may be re-opened."
+                     + "<br><br>Environment and Climate Change Canada and the CFIA will advise you when the area may be re-opened."
                      + "<br><br><br><br><br>"
                      + "Cet avis est pour vous informer que <b>" + rainAmount + "</b> mm de pluie furent enregistrés à <b>" + precipStation + "</b> dans les dernières <b>" + timeFrame + "</b> heures. " +
                      "En raison de ces fortes précipitations, il y a raison de croire que les mollusques récoltés dans les eaux de <b>" + CMPArea + "</b> sont possiblement contaminés. " +
                      "Conformément au plan de gestion conditionnel de la région, la portion gérée conditionnellement de <b>" + CMPArea + "</b> devrait immédiatement être placée en état fermé."
-                     + "<br><br>Environnement Canada et l'ACIA aviseront lorsque la région pourra être rouverte.";
+                     + "<br><br>Environnement et Changement Climatique Canada et l'ACIA aviseront lorsque la région pourra être rouverte.";
 
             MailMessage mail = new System.Net.Mail.MailMessage();
 

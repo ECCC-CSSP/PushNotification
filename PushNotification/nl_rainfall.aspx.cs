@@ -234,7 +234,7 @@ namespace PushNotification
                         //    msg = "Please be advised that <b>" + rainAmount + "</b> mm of rainfall has been recorded at <b>" + precipStation + "</b> in the past <b>" + timeFrame + "</b> hours. " +
                         //"As a result of this precipitation event, there is reason to believe that shellfish harvested from the waters of <b>" + CMPArea + "</b> are at risk of being contaminated. " +
                         //"In accordance with the Conditional Management Plan for the area, the conditionally-managed waters of <b>" + CMPArea + "</b> should immediately be placed in Closed Status."
-                        //+ "<br><br>Environment Canada and the CFIA will advise you when the area may be re-opened.";
+                        //+ "<br><br>Environment and Climate Change Canada and the CFIA will advise you when the area may be re-opened.";
 
                         subject = "EXTREME RAINFALL LEVEL(S) EXCEEDED";
 
@@ -553,7 +553,7 @@ namespace PushNotification
             //    ////    msg = "Please be advised that <b>" + rainAmount + "</b> mm of rainfall has been recorded at <b>" + precipStation + "</b> in the past <b>" + timeFrame + "</b> hours. " +
             //    ////"As a result of this precipitation event, there is reason to believe that shellfish harvested from the waters of <b>" + CMPArea + "</b> are at risk of being contaminated. " +
             //    ////"In accordance with the Conditional Management Plan for the area, the conditionally-managed waters of <b>" + CMPArea + "</b> should immediately be placed in Closed Status."
-            //    ////+ "<br><br>Environment Canada and the CFIA will advise you when the area may be re-opened.";
+            //    ////+ "<br><br>Environment and Climate Change Canada and the CFIA will advise you when the area may be re-opened.";
 
             //    //subject = "EXTREME RAINFALL LEVEL(S) EXCEEDED";
 
