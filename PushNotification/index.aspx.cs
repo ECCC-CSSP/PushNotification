@@ -23,7 +23,7 @@ namespace PushNotification
         {
             MailMessage mail = new System.Net.Mail.MailMessage();
 
-            mail.To.Add("charles.leblanc@ec.gc.ca,Greg.Perchard@ec.gc.ca,Ryan.Alexander@ec.gc.ca,David.Halliwell@ec.gc.ca,julieanne.richard@ec.gc.ca,louka.tousignant@ec.gc.ca,jeffrey.stobo@ec.gc.ca,patrice.godin@ec.gc.ca,Joe.Pomeroy@ec.gc.ca,Karyne.Martell@ec.gc.ca");
+            mail.To.Add("charles.leblanc@ec.gc.ca,Greg.Perchard@ec.gc.ca,Ryan.Alexander@ec.gc.ca,Daniel.Bastarache@ec.gc.ca,julieanne.richard@ec.gc.ca,louka.tousignant@ec.gc.ca,jeffrey.stobo@ec.gc.ca,patrice.godin@ec.gc.ca,Joe.Pomeroy@ec.gc.ca,Karyne.Martell@ec.gc.ca");
 
             mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
             mail.IsBodyHtml = true;
