@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
 using System.Xml.Linq;
+using System.Configuration;
+using System.Net;
 
 namespace PushNotification
 {
@@ -30,17 +32,16 @@ namespace PushNotification
 
 
             //set xml documents based on date
-            string xmldoc = "https://dd.weather.gc.ca/observations/xml/NL/yesterday/yesterday_nl_" + myDate.ToString(format) + "_e.xml";
-            //string xmldoc = "https://dd.weather.gc.ca/observations/xml/NL/yesterday/yesterday_nl_20120111_e.xml";
-            //string xmldocPrev = "https://dd.weather.gc.ca/observations/xml/NL/yesterday/yesterday_nl_20120111_e.xml";
-            string xmldocPrev = "https://dd.weather.gc.ca/observations/xml/NL/yesterday/yesterday_nl_" + preDay.ToString(format) + "_e.xml";
+            string xmldoc = ConfigurationManager.AppSettings["nl_obs"] + myDate.ToString(format) + "_e.xml";
+            string xmldocPrev = ConfigurationManager.AppSettings["nl_obs"] + preDay.ToString(format) + "_e.xml";
 
             //get xml docs to display 5 days
-            string xmldocPrevPrev = "https://dd.weather.gc.ca/observations/xml/NL/yesterday/yesterday_nl_" + prepreDay.ToString(format) + "_e.xml";
-            //string xmlDoc3pre = "https://dd.weather.gc.ca/observations/xml/NL/yesterday/yesterday_nl_" + pre3Day.ToString(format) + "_e.xml";
-            //string xmlDoc4pre = "https://dd.weather.gc.ca/observations/xml/NL/yesterday/yesterday_nl_" + pre4Day.ToString(format) + "_e.xml";
+            string xmldocPrevPrev = ConfigurationManager.AppSettings["nl_obs"] + prepreDay.ToString(format) + "_e.xml";
+            //string xmlDoc3pre = ConfigurationManager.AppSettings["nl_obs"] + pre3Day.ToString(format) + "_e.xml";
+            //string xmlDoc4pre = ConfigurationManager.AppSettings["nl_obs"] + pre4Day.ToString(format) + "_e.xml";
 
             //load xml file accordingly
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             XElement myelement = XElement.Load(xmldoc);
             XElement myelementPrev = XElement.Load(xmldocPrev);
 

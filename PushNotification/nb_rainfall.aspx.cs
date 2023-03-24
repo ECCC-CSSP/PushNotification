@@ -10,6 +10,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
+using System.Configuration;
 
 namespace PushNotification
 {
@@ -48,15 +49,13 @@ namespace PushNotification
 
 
             //set xml documents based on date
-            string xmldocURL = "https://dd.weather.gc.ca/observations/xml/NB/yesterday/yesterday_nb_" + myDate.ToString(format) + "_e.xml";
-            //string xmldoc = "https://dd.weather.gc.ca/observations/xml/NB/yesterday/yesterday_nb_20120111_e.xml";
-            //string xmldocPrev = "https://dd.weather.gc.ca/observations/xml/NB/yesterday/yesterday_nb_20120111_e.xml";
-            string xmldocPrevURL = "https://dd.weather.gc.ca/observations/xml/NB/yesterday/yesterday_nb_" + preDay.ToString(format) + "_e.xml";
+            string xmldocURL = ConfigurationManager.AppSettings["nb_obs"] + myDate.ToString(format) + "_e.xml";
+            string xmldocPrevURL = ConfigurationManager.AppSettings["nb_obs"] + preDay.ToString(format) + "_e.xml";
 
             //get xml docs to display 5 days
-            string xmldocPrevPrevURL = "https://dd.weather.gc.ca/observations/xml/NB/yesterday/yesterday_nb_" + prepreDay.ToString(format) + "_e.xml";
-            //string xmlDoc3preURL = "https://dd.weather.gc.ca/observations/xml/NB/yesterday/yesterday_nb_" + pre3Day.ToString(format) + "_e.xml";
-            //string xmlDoc4preURL = "https://dd.weather.gc.ca/observations/xml/NB/yesterday/yesterday_nb_" + pre4Day.ToString(format) + "_e.xml";
+            string xmldocPrevPrevURL = ConfigurationManager.AppSettings["nb_obs"] + prepreDay.ToString(format) + "_e.xml";
+            //string xmlDoc3preURL = ConfigurationManager.AppSettings["nb_obs"] + pre3Day.ToString(format) + "_e.xml";
+            //string xmlDoc4preURL = ConfigurationManager.AppSettings["nb_obs"] + pre4Day.ToString(format) + "_e.xml";
 
             string xmldoc = "";
             string xmldocPrev = "";
@@ -215,14 +214,15 @@ namespace PushNotification
                 }
                 else
                 {
-                    if (Convert.ToDouble(gviewPrecip.Rows[i].Cells[0].Text) > 74.9)
+                    if (Convert.ToDouble(gviewPrecip.Rows[i].Cells[0].Text) > Convert.ToDouble(ConfigurationManager.AppSettings["nb_limit"]))
                     {
                         string subject;
                         string msg;
 
                         MailMessage mail = new System.Net.Mail.MailMessage();
 
-                        mail.To.Add("jeffrey.stobo@ec.gc.ca,patrice.godin@ec.gc.ca,Christopher.Roberts@ec.gc.ca,charles.leblanc@ec.gc.ca,joe.pomeroy@ec.gc.ca,karyne.martell@ec.gc.ca");
+                        //mail.To.Add("jeffrey.stobo@ec.gc.ca,patrice.godin@ec.gc.ca,Dave.Wood@ec.gc.ca,charles.leblanc@ec.gc.ca,joe.pomeroy@ec.gc.ca,karyne.martell@ec.gc.ca");
+                        mail.To.Add(ConfigurationManager.AppSettings["nb_email"]);
 
                         mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
                         mail.IsBodyHtml = true;

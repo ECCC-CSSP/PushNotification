@@ -85,6 +85,8 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="bc.aspx" />
+    <Content Include="bc_rainfall.aspx" />
     <Content Include="nb.aspx" />
     <Content Include="nb_rainfall.aspx" />
     <Content Include="nl.aspx" />
@@ -93,6 +95,8 @@
     <Content Include="ns_rainfall.aspx" />
     <Content Include="pe.aspx" />
     <Content Include="pe_rainfall.aspx" />
+    <Content Include="qc.aspx" />
+    <Content Include="qc_rainfall.aspx" />
     <Content Include="RyanTest.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="index.aspx" />
@@ -149,6 +153,20 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bc.aspx.cs">
+      <DependentUpon>bc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bc.aspx.designer.cs">
+      <DependentUpon>bc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bc_rainfall.aspx.cs">
+      <DependentUpon>bc_rainfall.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bc_rainfall.aspx.designer.cs">
+      <DependentUpon>bc_rainfall.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -217,6 +235,20 @@
       <DependentUpon>pe_rainfall.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="qc.aspx.cs">
+      <DependentUpon>qc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qc.aspx.designer.cs">
+      <DependentUpon>qc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qc_rainfall.aspx.cs">
+      <DependentUpon>qc_rainfall.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qc_rainfall.aspx.designer.cs">
+      <DependentUpon>qc_rainfall.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RyanTest.aspx.cs">
       <DependentUpon>RyanTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

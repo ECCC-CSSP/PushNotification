@@ -8,12 +8,11 @@ using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Xml;
 using System.Xml.Linq;
 
 namespace PushNotification
 {
-    public partial class nb : System.Web.UI.Page
+    public partial class qc : System.Web.UI.Page
     {
         private static bool ValidateRemoteCertificate(object sender, X509Certificate cert, X509Chain chain, SslPolicyErrors error)
         {
@@ -29,7 +28,6 @@ namespace PushNotification
 
             return false;
         }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             //get today's date
@@ -46,15 +44,15 @@ namespace PushNotification
             DateTime pre3Day = DateTime.Today.AddDays(-3);
             DateTime pre4Day = DateTime.Today.AddDays(-4);
 
-            
+
             //set xml documents based on date
-            string xmldocURL = ConfigurationManager.AppSettings["nb_obs"] + myDate.ToString(format) + "_e.xml";
-            string xmldocPrevURL = ConfigurationManager.AppSettings["nb_obs"] + preDay.ToString(format) + "_e.xml";
+            string xmldocURL = ConfigurationManager.AppSettings["qc_obs"] + myDate.ToString(format) + "_e.xml";
+            string xmldocPrevURL = ConfigurationManager.AppSettings["qc_obs"] + preDay.ToString(format) + "_e.xml";
 
             //get xml docs to display 5 days
-            string xmldocPrevPrevURL = ConfigurationManager.AppSettings["nb_obs"] + prepreDay.ToString(format) + "_e.xml";
-            //string xmlDoc3preURL = ConfigurationManager.AppSettings["nb_obs"] + pre3Day.ToString(format) + "_e.xml";
-            //string xmlDoc4preURL = ConfigurationManager.AppSettings["nb_obs"] + pre4Day.ToString(format) + "_e.xml";
+            string xmldocPrevPrevURL = ConfigurationManager.AppSettings["qc_obs"] + prepreDay.ToString(format) + "_e.xml";
+            //string xmlDoc3preURL = ConfigurationManager.AppSettings["qc_obs"] + pre3Day.ToString(format) + "_e.xml";
+            //string xmlDoc4preURL = ConfigurationManager.AppSettings["qc_obs"] + pre4Day.ToString(format) + "_e.xml";
 
             string xmldoc = "";
             string xmldocPrev = "";
@@ -290,8 +288,6 @@ namespace PushNotification
 
             //Response.Write("number of stations are: " + test + "<br>");
 
-
         }
-
     }
 }

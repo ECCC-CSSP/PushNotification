@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
 using System.Xml.Linq;
+using System.Configuration;
 
 namespace PushNotification
 {
@@ -27,60 +29,20 @@ namespace PushNotification
             DateTime pre3Day = DateTime.Today.AddDays(-3);
             DateTime pre4Day = DateTime.Today.AddDays(-4);
 
-            //set the time frame for each area
-            //caraquet
-            //Sep 20 - Nov 15
-            DateTime basStart = new DateTime(2022, 09, 20);
-            DateTime basEnd = new DateTime(2022, 11, 15);
-
-            //tabusintac Bay
-            //Sep 20 - Nov 16
-            DateTime tabStart = new DateTime(2022, 09, 20);
-            DateTime tabEnd = new DateTime(2022, 11, 16);
-
-            //pocologan harbour
-            //Nov 1 - Mar 31
-            //need to take care of the date when the years change.
-            DateTime pocoStart = new DateTime(2022, 11, 01);
-            DateTime pocoEnd = new DateTime(2023, 03, 31);
-
-            //letang harbour – Rain CMP eliminated (no rain criteria)
-            //Nov 1 - Mar 31
-            //need to take care of the date when the year changes.
-            //DateTime letangStart = new DateTime(2017, 11, 01);
-            //DateTime letangEnd = new DateTime(2019, 03, 31);
-
-            //digdeguash harbour
-            //Oct 1 - Apr 30
-            //need to take care of the date when the year changes.
-            DateTime digStart = new DateTime(2022, 10, 01);
-            DateTime digEnd = new DateTime(2023, 04, 30);
-
-            //boca river & mill cove
-            //Oct 1 - Apr 30
-            //need to take care of the date when the year changes.
-            DateTime bocMillStart = new DateTime(2022, 10, 01);
-            DateTime bocMillEnd = new DateTime(2023, 04, 30);
-
-            //oak bay & waweig river
-            //Nov 1 - Mar 31
-            //need to take care of the date when the year changes.
-            DateTime oakWawStart = new DateTime(2022, 11, 01);
-            DateTime oakWawEnd = new DateTime(2023, 03, 31);
+            
 
             //set xml documents based on date
-            string xmldoc = "https://dd.weather.gc.ca/observations/xml/NS/yesterday/yesterday_ns_" + myDate.ToString(format) + "_e.xml";
-            //string xmldoc = "https://dd.weather.gc.ca/observations/xml/NS/yesterday/yesterday_ns_20120111_e.xml";
-            //string xmldocPrev = "https://dd.weather.gc.ca/observations/xml/NS/yesterday/yesterday_ns_20120111_e.xml";
-            string xmldocPrev = "https://dd.weather.gc.ca/observations/xml/NS/yesterday/yesterday_ns_" + preDay.ToString(format) + "_e.xml";
+            string xmldoc = ConfigurationManager.AppSettings["ns_obs"] + myDate.ToString(format) + "_e.xml";
+            string xmldocPrev = ConfigurationManager.AppSettings["ns_obs"] + preDay.ToString(format) + "_e.xml";
 
             //get xml docs to display 5 days
-            string xmldocPrevPrev = "https://dd.weather.gc.ca/observations/xml/NS/yesterday/yesterday_ns_" + prepreDay.ToString(format) + "_e.xml";
-            //string xmlDoc3pre = "https://dd.weather.gc.ca/observations/xml/NS/yesterday/yesterday_ns_" + pre3Day.ToString(format) + "_e.xml";
-            //string xmlDoc4pre = "https://dd.weather.gc.ca/observations/xml/NS/yesterday/yesterday_ns_" + pre4Day.ToString(format) + "_e.xml";
+            string xmldocPrevPrev = ConfigurationManager.AppSettings["ns_obs"] + prepreDay.ToString(format) + "_e.xml";
+            //string xmlDoc3pre = ConfigurationManager.AppSettings["ns_obs"] + pre3Day.ToString(format) + "_e.xml";
+            //string xmlDoc4pre = ConfigurationManager.AppSettings["ns_obs"] + pre4Day.ToString(format) + "_e.xml";
 
 
             //load xml file accordingly
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             XElement myelement = XElement.Load(xmldoc);
             XElement myelementPrev = XElement.Load(xmldocPrev);
 

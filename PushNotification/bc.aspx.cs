@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Xml;
 using System.Xml.Linq;
 
 namespace PushNotification
 {
-    public partial class nb : System.Web.UI.Page
+    public partial class bc : System.Web.UI.Page
     {
         private static bool ValidateRemoteCertificate(object sender, X509Certificate cert, X509Chain chain, SslPolicyErrors error)
         {
@@ -29,7 +29,6 @@ namespace PushNotification
 
             return false;
         }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             //get today's date
@@ -46,15 +45,15 @@ namespace PushNotification
             DateTime pre3Day = DateTime.Today.AddDays(-3);
             DateTime pre4Day = DateTime.Today.AddDays(-4);
 
-            
+
             //set xml documents based on date
-            string xmldocURL = ConfigurationManager.AppSettings["nb_obs"] + myDate.ToString(format) + "_e.xml";
-            string xmldocPrevURL = ConfigurationManager.AppSettings["nb_obs"] + preDay.ToString(format) + "_e.xml";
+            string xmldocURL = ConfigurationManager.AppSettings["bc_obs"] + myDate.ToString(format) + "_e.xml";
+            string xmldocPrevURL = ConfigurationManager.AppSettings["bc_obs"] + preDay.ToString(format) + "_e.xml";
 
             //get xml docs to display 5 days
-            string xmldocPrevPrevURL = ConfigurationManager.AppSettings["nb_obs"] + prepreDay.ToString(format) + "_e.xml";
-            //string xmlDoc3preURL = ConfigurationManager.AppSettings["nb_obs"] + pre3Day.ToString(format) + "_e.xml";
-            //string xmlDoc4preURL = ConfigurationManager.AppSettings["nb_obs"] + pre4Day.ToString(format) + "_e.xml";
+            string xmldocPrevPrevURL = ConfigurationManager.AppSettings["bc_obs"] + prepreDay.ToString(format) + "_e.xml";
+            //string xmlDoc3preURL = ConfigurationManager.AppSettings["bc_obs"] + pre3Day.ToString(format) + "_e.xml";
+            //string xmlDoc4preURL = ConfigurationManager.AppSettings["bc_obs"] + pre4Day.ToString(format) + "_e.xml";
 
             string xmldoc = "";
             string xmldocPrev = "";
@@ -205,6 +204,9 @@ namespace PushNotification
             //gview4pre.HeaderRow.Cells[0].Text = pre4Day.AddDays(-1).ToShortDateString();
 
 
+            //Ryan Testing
+            
+
             //var test = gviewName.
 
             //var i = 0;
@@ -219,7 +221,7 @@ namespace PushNotification
             //var rowStSteph = 0;
             //var rowStStephPrev = 0;
 
-
+            //
             //while (i < observations.Count())
             //{
             //    //Response.Write(observations.ElementAt(i).Station_Name + " -- " + i + "<br>" );
@@ -289,9 +291,6 @@ namespace PushNotification
 
 
             //Response.Write("number of stations are: " + test + "<br>");
-
-
         }
-
     }
 }

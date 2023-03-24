@@ -14,7 +14,7 @@ using System.Configuration;
 
 namespace PushNotification
 {
-    public partial class pe_rainfall : System.Web.UI.Page
+    public partial class qc_rainfall : System.Web.UI.Page
     {
         private static bool ValidateRemoteCertificate(object sender, X509Certificate cert, X509Chain chain, SslPolicyErrors error)
         {
@@ -30,7 +30,6 @@ namespace PushNotification
 
             return false;
         }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             //get today's date
@@ -47,16 +46,15 @@ namespace PushNotification
             DateTime pre3Day = DateTime.Today.AddDays(-3);
             DateTime pre4Day = DateTime.Today.AddDays(-4);
 
-            
+
             //set xml documents based on date
-            string xmldocURL = ConfigurationManager.AppSettings["pe_obs"] + myDate.ToString(format) + "_e.xml";
-            string xmldocPrevURL = ConfigurationManager.AppSettings["pe_obs"] + preDay.ToString(format) + "_e.xml";
+            string xmldocURL = ConfigurationManager.AppSettings["qc_obs"] + myDate.ToString(format) + "_e.xml";
+            string xmldocPrevURL = ConfigurationManager.AppSettings["qc_obs"] + preDay.ToString(format) + "_e.xml";
 
             //get xml docs to display 5 days
-            string xmldocPrevPrevURL = ConfigurationManager.AppSettings["pe_obs"] + prepreDay.ToString(format) + "_e.xml";
-            //string xmlDoc3preURL = ConfigurationManager.AppSettings["pe_obs"] + pre3Day.ToString(format) + "_e.xml";
-            //string xmlDoc4preURL = ConfigurationManager.AppSettings["pe_obs"] + pre4Day.ToString(format) + "_e.xml";
-
+            string xmldocPrevPrevURL = ConfigurationManager.AppSettings["qc_obs"] + prepreDay.ToString(format) + "_e.xml";
+            //string xmlDoc3preURL = ConfigurationManager.AppSettings["qc_obs"] + pre3Day.ToString(format) + "_e.xml";
+            //string xmlDoc4preURL = ConfigurationManager.AppSettings["qc_obs"] + pre4Day.ToString(format) + "_e.xml";
 
             string xmldoc = "";
             string xmldocPrev = "";
@@ -87,6 +85,7 @@ namespace PushNotification
             //XElement myelement3pre = XDocument.Parse(xmlDoc3pre).Root;
             //XElement myelement4pre = XDocument.Parse(xmlDoc4pre).Root;
 
+
             ////load xml file accordingly
             //XElement myelement = XElement.Load(xmldoc);
             //XElement myelementPrev = XElement.Load(xmldocPrev);
@@ -97,9 +96,11 @@ namespace PushNotification
             //XElement myelement4pre = XElement.Load(xmlDoc4pre);
 
 
-            ////set namespace to access nodes
+            //set namespace to access nodes
             //XNamespace obs = "http://dms.ec.gc.ca/schema/point-observation/2.0";
             //XNamespace obsNew = "http://dms.ec.gc.ca/schema/point-observation/2.1";
+
+
 
             //create query to extract station name
             var observations = (from myVal in myelement.Descendants()
@@ -192,18 +193,10 @@ namespace PushNotification
             //gview4pre.HeaderRow.Cells[0].Text = pre4Day.AddDays(-1).ToShortDateString();
 
 
-            ////hold vals for stations
-            //var char_air = gviewPrecip.Rows[0].Cells[0].Text;
-            //var east_pt = gviewPrecip.Rows[1].Cells[0].Text;
-            //var harrington = gviewPrecip.Rows[2].Cells[0].Text;
-            //var maple = gviewPrecip.Rows[3].Cells[0].Text;
-            //var north = gviewPrecip.Rows[4].Cells[0].Text;
-            //var stpeters = gviewPrecip.Rows[5].Cells[0].Text;
-            //var summer = gviewPrecip.Rows[6].Cells[0].Text;
 
             string response;
 
-            string pageToGet = "http://131.235.1.167/PushNotification/pe.aspx";
+            string pageToGet = "http://131.235.1.167/PushNotification/qc.aspx";
             using (WebClient webClient = new WebClient())
             {
                 response = webClient.DownloadString(pageToGet);
@@ -219,16 +212,16 @@ namespace PushNotification
 
                 }
                 else
-                {
-                    if (Convert.ToDouble(gviewPrecip.Rows[i].Cells[0].Text) > Convert.ToDouble(ConfigurationManager.AppSettings["pe_limit"]))
+                {   
+                    if (Convert.ToDouble(gviewPrecip.Rows[i].Cells[0].Text) > Convert.ToDouble(ConfigurationManager.AppSettings["qc_limit"]))
                     {
                         string subject;
                         string msg;
 
                         MailMessage mail = new System.Net.Mail.MailMessage();
 
-                        //mail.To.Add("jeffrey.stobo@ec.gc.ca,david.macarthur@ec.gc.ca,lauren.pothier@ec.gc.ca,cody.bannister@ec.gc.ca,Dave.Wood@ec.gc.ca,ryan.alexander@ec.gc.ca,charles.leblanc@ec.gc.ca,joe.pomeroy@ec.gc.ca,karyne.martell@ec.gc.ca");
-                        mail.To.Add(ConfigurationManager.AppSettings["pe_email"]);
+                        //mail.To.Add("f.dmsqepcecquebec-wqmsdswcpquebec.f@ec.gc.ca");
+                        mail.To.Add(ConfigurationManager.AppSettings["qc_email"]);
 
                         mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
                         mail.IsBodyHtml = true;
@@ -248,7 +241,7 @@ namespace PushNotification
 
                         subject = "EXTREME RAINFALL LEVEL(S) EXCEEDED";
 
-                        msg = "Please check rainfall levels in Prince Edward Island.<br><br><a href='http://131.235.1.167/PushNotification/pe.aspx'>PEI Rainfall</a><br><br><br><table><tr>" + response + "</tr></table>";
+                        msg = "Please check rainfall levels in Quebec.<br><br><a href='http://131.235.1.167/PushNotification/qc.aspx'>QC Rainfall</a><br><br><br><table><tr>" + response + "</tr></table>";
 
                         mail.Subject = subject;
                         mail.Body = msg;
@@ -263,62 +256,166 @@ namespace PushNotification
             }
 
 
+
+            ////hold vals for stations
+            //var Bas_Cara = gviewPrecip.Rows[0].Cells[0].Text;
+            //var Bath_Air = gviewPrecip.Rows[1].Cells[0].Text;
+            //var Bouctouche = gviewPrecip.Rows[2].Cells[0].Text;
+            //var Charlo = gviewPrecip.Rows[3].Cells[0].Text;
+            //var Edmundston = gviewPrecip.Rows[4].Cells[0].Text;
+            //var Fred_AAFC = gviewPrecip.Rows[5].Cells[0].Text;
+            //var Fred_Aqua_Cen = gviewPrecip.Rows[6].Cells[0].Text;
+            //var Fred_Air = gviewPrecip.Rows[7].Cells[0].Text;
+            //var Fundy_Park = gviewPrecip.Rows[8].Cells[0].Text;
+            //var Gage_Air = gviewPrecip.Rows[9].Cells[0].Text;
+            //var Grand_Manan = gviewPrecip.Rows[10].Cells[0].Text; 
+            //var Moncton_Air = gviewPrecip.Rows[11].Cells[0].Text;
+            //var Kouchi = gviewPrecip.Rows[12].Cells[0].Text;
+            //var Mech_Set = gviewPrecip.Rows[13].Cells[0].Text;
+            //var Miram = gviewPrecip.Rows[14].Cells[0].Text;
+            //var Miscou = gviewPrecip.Rows[15].Cells[0].Text;
+            //var Pt_Lepreau = gviewPrecip.Rows[16].Cells[0].Text;
+            //var Red_Pines = gviewPrecip.Rows[17].Cells[0].Text;
+            //var StJohn_Air = gviewPrecip.Rows[18].Cells[0].Text;
+            //var StLeo = gviewPrecip.Rows[19].Cells[0].Text;
+            //var StLeo_Air = gviewPrecip.Rows[20].Cells[0].Text;
+            //var StStep = gviewPrecip.Rows[21].Cells[0].Text;
+
+
             ////to handle a value of "trace"
             //int trace = 0;
 
-            //if (char_air == "Trace" || char_air == "&nbsp;")
+            //if (Bas_Cara == "Trace" || Bas_Cara == "&nbsp;")
             //{
-            //    char_air = Convert.ToString(trace);
+            //    Bas_Cara = Convert.ToString(trace);
             //}
-            //if (east_pt == "Trace" || east_pt == "&nbsp;")
+            //if (Bath_Air == "Trace" || Bath_Air == "&nbsp;")
             //{
-            //    east_pt = Convert.ToString(trace);
+            //    Bath_Air = Convert.ToString(trace);
             //}
-            //if (harrington == "Trace" || harrington == "&nbsp;")
+            //if (Bouctouche == "Trace" || Bouctouche == "&nbsp;")
             //{
-            //    harrington = Convert.ToString(trace);
+            //    Bouctouche = Convert.ToString(trace);
             //}
-            //if (maple == "Trace" || maple == "&nbsp;")
+            //if (Charlo == "Trace" || Charlo == "&nbsp;")
             //{
-            //    maple = Convert.ToString(trace);
+            //    Charlo = Convert.ToString(trace);
             //}
-            //if (north == "Trace" || north == "&nbsp;")
+            //if (Edmundston == "Trace" || Edmundston == "&nbsp;")
             //{
-            //    north = Convert.ToString(trace);
+            //    Edmundston = Convert.ToString(trace);
             //}
-            //if (stpeters == "Trace" || stpeters == "&nbsp;")
+            //if (Fred_AAFC == "Trace" || Fred_AAFC == "&nbsp;")
             //{
-            //    stpeters = Convert.ToString(trace);
+            //    Fred_AAFC = Convert.ToString(trace);
             //}
-            //if (summer == "Trace" || summer == "&nbsp;")
+            //if (Fred_Aqua_Cen == "Trace" || Fred_Aqua_Cen == "&nbsp;")
             //{
-            //    summer = Convert.ToString(trace);
+            //    Fred_Aqua_Cen = Convert.ToString(trace);
+            //}
+            //if (Fred_Air == "Trace" || Fred_Air == "&nbsp;")
+            //{
+            //    Fred_Air = Convert.ToString(trace);
+            //}
+            //if (Fundy_Park == "Trace" || Fundy_Park == "&nbsp;")
+            //{
+            //    Fundy_Park = Convert.ToString(trace);
+            //}
+            //if (Gage_Air == "Trace" || Gage_Air == "&nbsp;")
+            //{
+            //    Gage_Air = Convert.ToString(trace);
+            //}
+            //if (Grand_Manan == "Trace" || Grand_Manan == "&nbsp;")
+            //{
+            //    Grand_Manan = Convert.ToString(trace);
+            //}
+            //if (Moncton_Air == "Trace" || Moncton_Air == "&nbsp;")
+            //{
+            //    Moncton_Air = Convert.ToString(trace);
+            //}
+            //if (Kouchi == "Trace" || Kouchi == "&nbsp;")
+            //{
+            //    Kouchi = Convert.ToString(trace);
+            //}
+            //if (Mech_Set == "Trace" || Mech_Set == "&nbsp;")
+            //{
+            //    Mech_Set = Convert.ToString(trace);
+            //}
+            //if (Miram == "Trace" || Miram == "&nbsp;")
+            //{
+            //    Miram = Convert.ToString(trace);
+            //}
+            //if (Miscou == "Trace" || Miscou == "&nbsp;")
+            //{
+            //    Miscou = Convert.ToString(trace);
+            //}
+            //if (Pt_Lepreau == "Trace" || Pt_Lepreau == "&nbsp;")
+            //{
+            //    Pt_Lepreau = Convert.ToString(trace);
+            //}
+            //if (Red_Pines == "Trace" || Red_Pines == "&nbsp;")
+            //{
+            //    Red_Pines = Convert.ToString(trace);
+            //}
+            //if (StJohn_Air == "Trace" || StJohn_Air == "&nbsp;")
+            //{
+            //    StJohn_Air = Convert.ToString(trace);
+            //}
+            //if (StLeo == "Trace" || StLeo == "&nbsp;")
+            //{
+            //    StLeo = Convert.ToString(trace);
+            //}
+            //if (StLeo_Air == "Trace" || StLeo_Air == "&nbsp;")
+            //{
+            //    StLeo_Air = Convert.ToString(trace);
+            //}
+            //if (StStep == "Trace" || StStep == "&nbsp;")
+            //{
+            //    StStep = Convert.ToString(trace);
             //}
 
+
             ////convert text to double
-            //var char_air24 = Convert.ToDouble(char_air);
-            //var east_pt24 = Convert.ToDouble(east_pt);
-            //var harrington24 = Convert.ToDouble(harrington);
-            //var maple24 = Convert.ToDouble(maple);
-            //var north24 = Convert.ToDouble(north);
-            //var stpeters24 = Convert.ToDouble(stpeters);
-            //var summer24 = Convert.ToDouble(summer);
+
+            //var Bas_Cara24 = Convert.ToDouble(Bas_Cara);
+            //var Bath_Air24 = Convert.ToDouble(Bath_Air);
+            //var Bouctouche24 = Convert.ToDouble(Bouctouche);
+            //var Charlo24 = Convert.ToDouble(Charlo);
+            //var Edmundston24 = Convert.ToDouble(Edmundston);
+            //var Fred_AAFC24 = Convert.ToDouble(Fred_AAFC);
+            //var Fred_Aqua_Cen24 = Convert.ToDouble(Fred_Aqua_Cen);
+            //var Fred_Air24 = Convert.ToDouble(Fred_Air);
+            //var Fundy_Park24 = Convert.ToDouble(Fundy_Park);
+            //var Gage_Air24 = Convert.ToDouble(Gage_Air);
+            //var Grand_Manan24 = Convert.ToDouble(Grand_Manan);
+            //var Moncton_Air24 = Convert.ToDouble(Moncton_Air);
+            //var Kouchi24 = Convert.ToDouble(Kouchi);
+            //var Mech_Set24 = Convert.ToDouble(Mech_Set);
+            //var Miram24 = Convert.ToDouble(Miram); ;
+            //var Miscou24 = Convert.ToDouble(Miscou);
+            //var Pt_Lepreau24 = Convert.ToDouble(Pt_Lepreau);
+            //var Red_Pines24 = Convert.ToDouble(Red_Pines);
+            //var StJohn_Air24 = Convert.ToDouble(StJohn_Air);
+            //var StLeo24 = Convert.ToDouble(StLeo);
+            //var StLeo_Air24 = Convert.ToDouble(StLeo_Air);
+            //var StStep24 = Convert.ToDouble(StStep);
 
             //string response;
 
-            //string pageToGet = "http://dartgis8/PushNotification/pe.aspx";
+            //string pageToGet = "http://131.235.1.167/PushNotification/nb.aspx";
             //using (WebClient webClient = new WebClient())
             //{
             //    response = webClient.DownloadString(pageToGet);
             //}
 
-
-
             ////check values against threshold
             //var val = 74.9;
 
-            //if(char_air24 > val || east_pt24 > val || harrington24 > val || maple24 > val || north24 > val || stpeters24 > val || summer24 > val)
+            //if (Bas_Cara24 > val || Bath_Air24 > val || Bouctouche24 > val || Charlo24 > val || Edmundston24 > val || Fred_AAFC24 > val || Fred_Aqua_Cen24 > val || Fred_Air24 > val || Fundy_Park24 > val || Gage_Air24 > val || Grand_Manan24 > val || Moncton_Air24 > val || Kouchi24 > val || Mech_Set24 > val || Miram24 > val || Miscou24 > val || Pt_Lepreau24 > val || Red_Pines24 > val || StJohn_Air24 > val || StLeo24 > val || StLeo_Air24 > val || StStep24 > val )
             //{
+            //    //************SELECT ENTIRE TEXT IN FUNCTION AND CLICK UNCOMMENT!!!!!!************//
+
+
             //    string subject;
             //    string msg;
 
@@ -340,7 +437,7 @@ namespace PushNotification
             //myClient.Host = "mail.ec.gc.ca";
             //myClient.Port = 587;
             ////myClient.Credentials = new System.Net.NetworkCredential("yourusername", "yourpassword");
-             //myClient.Credentials = new System.Net.NetworkCredential("pccsm-cssp@ec.gc.ca", "Gt=UJZ3g]8_P86Q]::p0F(%=$_OL_Y");
+            //myClient.Credentials = new System.Net.NetworkCredential("pccsm-cssp@ec.gc.ca", "Gt=UJZ3g]8_P86Q]::p0F(%=$_OL_Y");
             //myClient.EnableSsl = true;
 
             //    //    subject = "TEST -- RAINFALL CRITERION EXCEEDED - " + CMPArea + " CMP";
@@ -351,14 +448,11 @@ namespace PushNotification
 
             //    subject = "EXTREME RAINFALL LEVEL(S) EXCEEDED";
 
-            //    msg = "Please check rainfall levels in Prince Edward Island.<br><br><a href='http://dartgis8/PushNotification/pe.aspx'>PE Rainfall</a><br><br><br><table><tr>" + response +"</tr></table>";
+            //    msg = "Please check rainfall levels in New Brunswick.<br><br><a href='http://131.235.1.167/PushNotification/nb.aspx'>NB Rainfall</a><br><br><br><table><tr>" + response + "</tr></table>";
             //    mail.Subject = subject;
             //    mail.Body = msg;
             //    myClient.Send(mail);
             //}
-
-
-
         }
     }
 }
