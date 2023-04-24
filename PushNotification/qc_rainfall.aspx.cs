@@ -220,7 +220,7 @@ namespace PushNotification
 
                         MailMessage mail = new System.Net.Mail.MailMessage();
 
-                        //mail.To.Add("f.dmsqepcecquebec-wqmsdswcpquebec.f@ec.gc.ca");
+                        //mail.To.Add("Alexandra.Audet@ec.gc.ca,Carlo.Cormier@ec.gc.ca,Yves.Lamontagne@ec.gc.ca,Caroline.Robert@ec.gc.ca,Martin.Rodrigue@ec.gc.ca,Julie.Savaria@ec.gc.ca");
                         mail.To.Add(ConfigurationManager.AppSettings["qc_email"]);
 
                         mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
