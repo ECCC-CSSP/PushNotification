@@ -180,9 +180,9 @@ namespace PushNotification
             DateTime basEnd = new DateTime(2022, 11, 15);
 
             //tabusintac Bay
-            //Sep 20 - Nov 16
-            DateTime tabStart = new DateTime(2022, 09, 20);
-            DateTime tabEnd = new DateTime(2022, 11, 16);
+            //Sep 1 - Nov 30
+            DateTime tabStart = new DateTime(2022, 09, 1);
+            DateTime tabEnd = new DateTime(2022, 11, 30);
 
             //pocologan harbour
             //Nov 1 - Mar 31
