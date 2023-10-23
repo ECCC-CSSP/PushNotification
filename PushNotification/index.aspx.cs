@@ -176,43 +176,43 @@ namespace PushNotification
             //set the time frame for each area
             //caraquet
             //Sep 20 - Nov 15
-            DateTime basStart = new DateTime(2022, 09, 20);
-            DateTime basEnd = new DateTime(2022, 11, 15);
+            DateTime basStart = new DateTime(2023, 09, 20);
+            DateTime basEnd = new DateTime(2024, 11, 15);
 
             //tabusintac Bay
             //Sep 1 - Nov 30
-            DateTime tabStart = new DateTime(2022, 09, 1);
-            DateTime tabEnd = new DateTime(2022, 11, 30);
+            DateTime tabStart = new DateTime(2023, 09, 1);
+            DateTime tabEnd = new DateTime(2023, 11, 30);
 
             //pocologan harbour
             //Nov 1 - Mar 31
             //need to take care of the date when the years change.
-            DateTime pocoStart = new DateTime(2022, 11, 01);
-            DateTime pocoEnd = new DateTime(2023, 03, 31);
+            DateTime pocoStart = new DateTime(2023, 11, 01);
+            DateTime pocoEnd = new DateTime(2024, 03, 31);
 
             //letang harbour – Rain CMP eliminated (no rain criteria)
             //Nov 1 - Mar 31
             //need to take care of the date when the year changes.
-            //DateTime letangStart = new DateTime(2017, 11, 01);
-            //DateTime letangEnd = new DateTime(2019, 03, 31);
+            //DateTime letangStart = new DateTime(2023, 11, 01);
+            //DateTime letangEnd = new DateTime(2024, 03, 31);
 
             //digdeguash harbour
             //Oct 1 - Apr 30
             //need to take care of the date when the year changes.
-            DateTime digStart = new DateTime(2022, 10, 01);
-            DateTime digEnd = new DateTime(2023, 04, 30);
+            DateTime digStart = new DateTime(2023, 10, 01);
+            DateTime digEnd = new DateTime(2024, 04, 30);
 
             //boca river & mill cove
             //Oct 1 - Apr 30
             //need to take care of the date when the year changes.
-            DateTime bocMillStart = new DateTime(2022, 10, 01);
-            DateTime bocMillEnd = new DateTime(2023, 04, 30);
+            DateTime bocMillStart = new DateTime(2023, 10, 01);
+            DateTime bocMillEnd = new DateTime(2024, 04, 30);
 
             //oak bay & waweig river
             //Nov 1 - Mar 31
             //need to take care of the date when the year changes.
-            DateTime oakWawStart = new DateTime(2022, 11, 01);
-            DateTime oakWawEnd = new DateTime(2023, 03, 31);
+            DateTime oakWawStart = new DateTime(2023, 11, 01);
+            DateTime oakWawEnd = new DateTime(2024, 03, 31);
 
 
             //set xml documents based on date
