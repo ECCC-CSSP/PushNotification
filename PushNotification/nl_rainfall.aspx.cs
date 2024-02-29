@@ -217,7 +217,7 @@ namespace PushNotification
 
                         MailMessage mail = new System.Net.Mail.MailMessage();
 
-                        //mail.To.Add("jeffrey.stobo@ec.gc.ca,dave.curtis@ec.gc.ca,Dave.Wood@ec.gc.ca,Greg.Perchard@ec.gc.ca,charles.leblanc@ec.gc.ca,karyne.martell@ec.gc.ca");
+                        //mail.To.Add("dave.curtis@ec.gc.ca,Dave.Wood@ec.gc.ca,Greg.Perchard@ec.gc.ca,charles.leblanc@ec.gc.ca,karyne.martell@ec.gc.ca");
                         mail.To.Add(ConfigurationManager.AppSettings["nl_email"]);
 
                         mail.From = new MailAddress("pccsm-cssp@ec.gc.ca");
